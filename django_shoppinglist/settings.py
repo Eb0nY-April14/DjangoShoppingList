@@ -16,13 +16,9 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
-# What this means is that if there's an environment variable called
-# 'DEVELOPMENT' in the environment, this variable will be set to its
-# value otherwise, it'll be false.
-development = os.environ.get('DEVELOPMENT', False)
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -33,22 +29,9 @@ SECRET_KEY = os.environ.get(
     'SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# This means that 'DEBUG' wll be true in development & false on Heroku
-# so that if there's an error on Heroku, no internal source code will
-# be exposed on the error page.
-DEBUG = development
-
-# We'll use our 'development' variable again to say if it's true, we want
-# to use localhost as our allowed host otherwise, use the Heroku hostname
-if development:
-    ALLOWED_HOSTS = ['localhost']
-else:
-    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
-
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['shoppinglist-planner.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -61,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    'cloudinary'
+    'cloudinary',
     'shoppinglist',
 ]
 
@@ -80,7 +63,7 @@ ROOT_URLCONF = 'django_shoppinglist.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -98,18 +81,10 @@ WSGI_APPLICATION = 'django_shoppinglist.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
