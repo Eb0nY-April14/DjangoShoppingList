@@ -16,6 +16,11 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
+# What this means is that if there's an environment variable called
+# 'DEVELOPMENT' in the environment, this variable will be set to its
+# value otherwise, it'll be false.
+development = os.environ.get('DEVELOPMENT', False)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,9 +33,22 @@ SECRET_KEY = os.environ.get(
     'SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+# SECURITY WARNING: don't run with debug turned on in production!
+# This means that 'DEBUG' wll be true in development & false on Heroku
+# so that if there's an error on Heroku, no internal source code will
+# be exposed on the error page.
+DEBUG = development
+
+# We'll use our 'development' variable again to say if it's true, we want
+# to use localhost as our allowed host otherwise, use the Heroku hostname
+if development:
+    ALLOWED_HOSTS = ['localhost']
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -41,7 +59,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary'
     'shoppinglist',
 ]
 
@@ -127,7 +147,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+# Static is for our CSS & JavaScript files
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Media is for our pictures (images)
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

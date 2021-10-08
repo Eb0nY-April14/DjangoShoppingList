@@ -1,0 +1,1 @@
+web: gunicorn django_shoppinglist.wsgi:application
