@@ -1,1 +1,1 @@
-web: gunicorn django_shoppinglist.wsgi:application
+web: gunicorn django_shoppinglist.wsgi
