@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shopping List View</title>
 </head>
 <body>
     <h1>My Shopping List:</h1>
-    {{ shoppinglistitems }}
     <table>
         <tr>
             <th>Item Name</th>
@@ -17,19 +16,29 @@
             <th>Total Price</th>
             <th>Date Created</th>
             <th>Date Updated</th>
-            <th>Done Status</th>
+            <!--<th>Done Status</th>-->
         </tr> 
         {% for shoppinglistitem in shoppinglistitems %}
         <!-- This will render in a table format the values of the 'shoppinglistitems' keys created within our 'context' variable in views.py -->
             <tr>
-                <td>{{ shoppinglistitem.item_name }}</td> 
-                <td>{{ shoppinglistitem.quantity }}</td> 
-                <td>{{ shoppinglistitem.unit_price }}</td> 
-                <td>{{ shoppinglistitem.total_price }}</td> 
-                <td>{{ shoppinglistitem.date_created }}</td> 
-                <td>{{ shoppinglistitem.date_updated }}</td> 
-                <td>{{ shoppinglistitem.done_status }}</td>  
+                {% if shoppinglistitem.done_status %}
+                    <td><strike>{{ shoppinglistitem.item_name }}</strike></td> 
+                    <td><strike>{{ shoppinglistitem.quantity }}</strike></td> 
+                    <td><strike>{{ shoppinglistitem.unit_price }}</strike></td> 
+                    <td><strike>{{ shoppinglistitem.total_price }}</strike></td> 
+                    <td><strike>{{ shoppinglistitem.date_created }}</strike></td> 
+                    <td><strike>{{ shoppinglistitem.date_updated }}</strike></td> 
+                {% else %}
+                    <td>{{ shoppinglistitem.item_name }}</td> 
+                    <td>{{ shoppinglistitem.quantity }}</td> 
+                    <td>{{ shoppinglistitem.unit_price }}</td> 
+                    <td>{{ shoppinglistitem.total_price }}</td> 
+                    <td>{{ shoppinglistitem.date_created }}</td> 
+                    <td>{{ shoppinglistitem.date_updated }}</td> 
+                {% endif %}
             </tr>
+        {% empty %}
+        <tr><td>You currently have no items in your shopping list.</td></tr>
         {% endfor %}
     </table>
 </body>
