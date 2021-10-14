@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from shoppinglist import views
-# We must add every def function or class we create in views.py file to
+# We must add every class we create in views.py file to
 # the line after this comment
-from shoppinglist.views import get_shopping_list, add_item, edit_item
+# from shoppinglist.views import get_shopping_list, add_item, edit_item, 
+# delete_item
 
 # We must add into this list the url path for every def function or class
 # we create in views.py file
@@ -28,4 +29,5 @@ urlpatterns = [
     path('', views.get_shopping_list, name='get_shopping_list'),
     path('add', views.add_item, name='add_item'),
     path('edit/<item_id>', views.edit_item, name='edit_item'),
+    path('delete/<item_id>', views.delete_item, name='delete_item'),
 ]

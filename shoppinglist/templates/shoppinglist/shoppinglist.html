@@ -33,8 +33,13 @@
                 {% endif %}
                 <td>
                     <a href="/edit/{{ shoppinglistitem.id }}">
-                        <button>Edit</button>
-                    </a>
+                        <button>Edit item</button>
+                    </a>    
+                </td>
+                <td>
+                    <a href="/delete/{{ shoppinglistitem.id }}">
+                        <button>Delete item</button>
+                    </a>    
                 </td>
             </tr>
         {% empty %}

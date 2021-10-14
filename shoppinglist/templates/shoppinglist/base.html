@@ -41,15 +41,12 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
-
-                <!--  This link will appear on a page only if a user logs in -->
+  
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="#">Logout</a>
                 </li>
 
-                <!--  This link will appear on a page only if a user is not logged in 
-                      or registered -->
                 {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="#">Register</a>
@@ -60,7 +57,7 @@
                 {% endif %}
             </ul>
             <span class="navbar-text text-muted">
-                takes stress out of shopping
+                takes the stress out of shopping
             </span>
         </div>
     </div>
