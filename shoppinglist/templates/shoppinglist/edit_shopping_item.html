@@ -1,0 +1,50 @@
+{% extends 'shoppinglist/base.html' %}
+    <title>Edit Shopping List Item</title>
+
+    {% block content %}
+    {% if user.is_authenticated %}
+        <h1>Edit an item in your shopping list:</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit">Update Item</button>
+        </form>
+        
+    {% else %} <!-- If user is not authenticated -->
+        <p>Sorry! You cannot edit items in the shopping list because you are not currently 
+        logged in. Please sign in if you already have an account or sign up for one.
+    </p>     
+    {% endif %} <!-- authentication end if -->
+
+    <script>
+        let qty = document.getElementById('id_quantity');
+        //console.log("The Quantity is: ", qty);
+
+        qty.addEventListener('change', function(event) {
+            let newQty = parseInt(qty.value, 10);
+            //console.log("The New Quantity is: ", newQty);
+
+            let price = document.getElementById('id_unit_price');
+            //console.log("The Price is: ", price);
+            //console.log("The New Price is: ", price);
+            let newPrice = parseFloat(price.value, 0.1);
+            //console.log("The New Price is: ", newPrice);
+            //let total = newQty * newPrice;
+
+            let total = newQty * newPrice;
+            //console.log("Total Price is: ", total);
+
+            document.getElementById("id_total_price").value = total;
+            let totalPrice = document.getElementById('id_total_price');
+            //totalPriceInput.value = total;
+            //console.log("The Total Price of your item is:", totalPrice);
+        });
+    </script>
+
+    {% endblock %}
+
+    
+        
+            
+        

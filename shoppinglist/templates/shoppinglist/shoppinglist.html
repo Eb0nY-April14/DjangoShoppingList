@@ -1,27 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping List View</title>
-</head>
-<body>
-    <h1>My Shopping List:</h1>
-    <table>
-        <tr>
-            <th>Item Name</th>
-            <th>Quantity</th>
-            <th>Unit Price</th>
-            <th>Total Price</th>
-            <th>Date Created</th>
-            <th>Date Updated</th>
-            <!--<th>Done Status</th>-->
-        </tr> 
+{% extends 'shoppinglist/base.html' %}
+<title>Home Page</title>
+    {% block content %}
+    {% if user.is_authenticated %}
+        <h1>Welcome {{ user.username }}! The items in your shopping list are:</h1>
+        <table>
+            <tr>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Total Price</th>
+                <th>Date Created</th>
+                <th>Date Updated</th>
+                <!--<th>Done Status</th>-->
+            </tr> 
         {% for shoppinglistitem in shoppinglistitems %}
         <!-- This will render in a table format the values of the 'shoppinglistitems' keys created within our 'context' variable in views.py -->
             <tr>
-                {% if shoppinglistitem.done_status %}
+                {% if shoppinglistitem.done_status %} 
                     <td><strike>{{ shoppinglistitem.item_name }}</strike></td> 
                     <td><strike>{{ shoppinglistitem.quantity }}</strike></td> 
                     <td><strike>{{ shoppinglistitem.unit_price }}</strike></td> 
@@ -36,10 +31,45 @@
                     <td>{{ shoppinglistitem.date_created }}</td> 
                     <td>{{ shoppinglistitem.date_updated }}</td> 
                 {% endif %}
+                <td>
+                    <a href="/edit/{{ shoppinglistitem.id }}">
+                        <button>Edit</button>
+                    </a>
+                </td>
             </tr>
         {% empty %}
-        <tr><td>You currently have no items in your shopping list.</td></tr>
+        <tr><td>Sorry!!! You currently have no items in your shopping list.</td></tr>
         {% endfor %}
-    </table>
-</body>
-</html>
+        </table>
+        <a href="/add">Add an item</a>
+
+    {% else %} <!-- If user is not authenticated -->
+    <p>
+        Welcome to the Shopping List Planner, a one-stop app that 
+        helps you manage your shopping and keeps you within checks so you don't 
+        overspend on your budget.  
+    </p>
+    <p>
+        Have you ever been in a situation where you just got home from your weekly 
+        shopping exhausted and desiring a rest but suddenly realised as you unpack 
+        your shopping that you missed out on essential items needed by the kids for 
+        school lunch or the whole family and you had to jet back to the store to get
+        them thereby wasting fuel, time and energy?
+    </p>
+    <p>
+        We've all been there but do not worry any more as this app is designed to take 
+        care of such situation and ensure you have a pleasurable time while shopping  
+        leaving you happy and fulfilled at the end. 
+    </p>
+    <p> 
+        Please <a href="#">sign in</a> if you already have an account or 
+        <a href="#">sign up</a> for a new account to enjoy the benefits 
+        this app has to offer.
+    </p>
+
+    <!--Sorry! You cannot view the shopping list because you are not currently logged in.-->
+    
+    {% endif %} <!-- authentication end if -->
+    {% endblock %}
+
+

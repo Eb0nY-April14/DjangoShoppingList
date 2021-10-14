@@ -1,0 +1,62 @@
+{% extends 'shoppinglist/base.html' %}
+    <title>Add Shopping List Item</title>
+
+    {% block content %}
+    {% if user.is_authenticated %}
+        <h1>Add an item to your shopping list:</h1>
+        <form method="POST" action="add">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit">Add Item</button>
+        </form>
+        
+    {% else %} <!-- If user is not authenticated -->
+        <p>Sorry! You cannot add items to the shopping list because you are not currently 
+        logged in. Please sign in if you already have an account or sign up for one.
+    </p>     
+    {% endif %} <!-- authentication end if -->
+
+    <script>
+        let price = document.getElementById('id_unit_price');
+        console.log("The Price is: ", price);
+        price.addEventListener('change', function(event) {
+            let newPrice = parseFloat(price.value);
+            console.log("The New Price is: ", newPrice);
+
+            let qty = document.getElementById('id_quantity');
+            console.log("The Quantity is: ", qty);
+
+            let newQty = parseInt(qty.value, 10);
+            console.log("The New Quantity is: ", newQty);
+            
+            let total = newQty * newPrice;
+            console.log("Total Price is: ", total); 
+
+            document.getElementById("id_total_price").value = total;
+            let totalPrice = document.getElementById('id_total_price');
+            console.log("The Total Price of your item is:", totalPrice);
+        });
+
+        let qty = document.getElementById('id_quantity');
+        console.log("The Quantity is: ", qty);
+        qty.addEventListener('change', function(event) {
+            let newQty = parseInt(qty.value, 10);
+            console.log("The New Quantity is: ", newQty);
+
+            let price = document.getElementById('id_unit_price');
+            console.log("The Price is: ", price);
+            
+            let newPrice = parseFloat(price.value);
+            console.log("The New Price is: ", newPrice);
+
+            let total = newQty * newPrice;
+            console.log("Total Price is: ", total);
+
+            document.getElementById("id_total_price").value = total;
+            let totalPrice = document.getElementById('id_total_price');
+            console.log("The Total Price of your item is:", totalPrice);
+        });
+    </script>
+
+    {% endblock %} 
