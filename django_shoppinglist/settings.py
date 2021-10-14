@@ -48,6 +48,11 @@ INSTALLED_APPS = [
     'shoppinglist',
 ]
 
+
+LOGIN_REDIRECT_URL = 'shoppinglist/shoppinglist.html'
+# LOGOUT_REDIRECT_URL = 'shoppinglist/index.html'
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

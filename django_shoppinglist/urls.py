@@ -14,10 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from shoppinglist.views import get_shopping_list
+from django.urls import path, include
+from shoppinglist import views
+# We must add every def function or class we create in views.py file to
+# the line after this comment
+from shoppinglist.views import get_shopping_list, add_item, edit_item
 
+# We must add into this list the url path for every def function or class
+# we create in views.py file
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', get_shopping_list, name='get_shopping_list')
+    path('account/', include('django.contrib.auth.urls')),
+    path('', views.get_shopping_list, name='get_shopping_list'),
+    path('add', views.add_item, name='add_item'),
+    path('edit/<item_id>', views.edit_item, name='edit_item'),
 ]
