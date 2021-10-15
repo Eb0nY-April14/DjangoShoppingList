@@ -11,7 +11,6 @@
                 <th>Total Price</th>
                 <th>Date Created</th>
                 <th>Date Updated</th>
-                <!--<th>Done Status</th>-->
             </tr> 
         {% for shoppinglistitem in shoppinglistitems %}
         <!-- This will render in a table format the values of the 'shoppinglistitems' keys created within our 'context' variable in views.py -->
@@ -30,7 +29,7 @@
                     <td>{{ shoppinglistitem.total_price }}</td> 
                     <td>{{ shoppinglistitem.date_created }}</td> 
                     <td>{{ shoppinglistitem.date_updated }}</td> 
-                {% endif %}
+                {% endif %} 
                 <td>
                     <a href="/edit/{{ shoppinglistitem.id }}">
                         <button>Edit item</button>
@@ -47,6 +46,7 @@
         {% endfor %}
         </table>
         <a href="/add">Add an item</a>
+        <a href="/deletelist">Delete List</a>
 
     {% else %} <!-- If user is not authenticated -->
     <p>

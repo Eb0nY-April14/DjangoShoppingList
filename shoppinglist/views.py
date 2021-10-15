@@ -48,3 +48,8 @@ def delete_item(request, item_id):
     listitem = ShoppingListItem.objects.get(pk=item_id)
     listitem.delete()
     return redirect('get_shopping_list')
+
+
+def delete_list(request):
+    ShoppingListItem.objects.all().delete()
+    return redirect('get_shopping_list')
