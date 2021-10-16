@@ -15,16 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from shoppinglist import views
 # We must add every class or function based views we create in views.py 
 # file to the line after this comment but we've summed them all up there 
 # cos it's getting too long
 from shoppinglist import views
-from shoppinglist.views import DeleteView
+from shoppinglist.views import DeleteView, CustomLoginView
 
 # We must add into this list the url path for every def function or class
 # we create in views.py file
 urlpatterns = [
+    path('login/', CustomLoginView.as_view(), name='login'),
     path('admin/', admin.site.urls),
     path('account/', include('django.contrib.auth.urls')),
     path('', views.get_shopping_list, name='get_shopping_list'),

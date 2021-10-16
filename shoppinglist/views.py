@@ -1,8 +1,20 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.urls import reverse_lazy
-from .models import ShoppingListItem
-from .forms import ItemForm
 from django.views.generic.edit import DeleteView
+from .forms import ItemForm
+from django.urls import reverse_lazy
+
+from django.contrib.auth.views import LoginView
+
+from .models import ShoppingListItem
+
+
+class CustomLoginView(LoginView):
+    template_name = 'shoppinglist/login.html'
+    fields = '__all__'
+    redirect_authenticated_user = True
+
+    def get_success_url(self):
+        return reverse_lazy('get_shopping_list')
 
 
 # Create your views here.
