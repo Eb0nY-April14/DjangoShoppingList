@@ -1,0 +1,6 @@
+<a href="{{ shoppinglistitems }}">Go Back</a>
+<form method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to delete this item? "{{shoppinglistitem}}"</p>
+    <input type="submit" value="Delete Item" />
+</form>
