@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
 from .models import ShoppingListItem
 from .forms import ItemForm
+from django.views.generic.edit import DeleteView
 
 
 # Create your views here.
@@ -44,10 +46,10 @@ def edit_item(request, item_id):
     return render(request, 'shoppinglist/edit_shopping_item.html', context)
 
 
-def delete_item(request, item_id):
-    listitem = ShoppingListItem.objects.get(pk=item_id)
-    listitem.delete()
-    return redirect('get_shopping_list')
+class DeleteView(DeleteView):
+    model = ShoppingListItem
+    context_object_name = 'shoppinglistitem'
+    success_url = reverse_lazy('get_shopping_list')
 
 
 def delete_list(request):

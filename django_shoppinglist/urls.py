@@ -20,6 +20,7 @@ from shoppinglist import views
 # file to the line after this comment but we've summed them all up there 
 # cos it's getting too long
 from shoppinglist import views
+from shoppinglist.views import DeleteView
 
 # We must add into this list the url path for every def function or class
 # we create in views.py file
@@ -29,6 +30,6 @@ urlpatterns = [
     path('', views.get_shopping_list, name='get_shopping_list'),
     path('add', views.add_item, name='add_item'),
     path('edit/<item_id>', views.edit_item, name='edit_item'),
-    path('delete/<item_id>', views.delete_item, name='delete_item'),
-    path('deletelist', views.delete_list, name='delete_list'),
+    path('shoppinglistitem-delete/<int:pk>/', DeleteView.as_view(), name='shoppinglistitem-delete'),
+    path('delete_list', views.delete_list, name='delete_list'),
 ]
