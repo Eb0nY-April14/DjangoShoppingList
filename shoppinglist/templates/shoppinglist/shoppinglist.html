@@ -2,6 +2,8 @@
 <title>Home Page</title>
     {% block content %}
     {% if user.is_authenticated %}
+    <p>{{user}}</p>
+    <hr>
         <h1>Welcome {{ user.username }}! The items in your shopping list are:</h1>
         <table>
             <tr>
@@ -35,11 +37,6 @@
                         <button>Edit item</button>
                     </a>    
                 </td>
-                <!-- <td>
-                    <a href="/delete/{{ shoppinglistitem.id }}">
-                        <button>Delete item</button>
-                    </a>    
-                </td> -->
                 <td>
                     <a href="{% url 'shoppinglistitem-delete' shoppinglistitem.id  %}">
                         <button>Delete item</button>

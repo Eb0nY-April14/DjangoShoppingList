@@ -1,6 +1,15 @@
-<a href="{{ shoppinglistitems }}">Go Back</a>
-<form method="POST">
-    {% csrf_token %}
-    <p>Are you sure you want to delete this item? "{{shoppinglistitem}}"</p>
-    <input type="submit" value="Delete Item" />
-</form>
+{% extends 'shoppinglist/base.html' %}
+    <title>Confirm Delete Form</title>
+
+    {% block content %}
+    <!-- {% if user.is_authenticated %} -->
+        <!-- <p>{{user}}</p> -->
+    <!-- {% endif %} -->
+    <hr>
+        <a href="{% url 'get_shopping_list' %}">Go Back</a>
+        <form method="POST">
+            {% csrf_token %}
+            <p>Are you sure you want to delete this item? "{{shoppinglistitem}}"</p>
+            <input type="submit" value="Delete Item" />
+        </form>
+    {% endblock %}
