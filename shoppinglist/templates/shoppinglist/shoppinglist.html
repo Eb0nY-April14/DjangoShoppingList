@@ -3,13 +3,13 @@
     {% block content %}
     {% if user.is_authenticated %}
     <!-- <p>{{user}}</p> -->
-    {% if messages %}
+    <!-- {% if messages %}
     {% for message in messages %}
     <div id="msg" class="alert alert-info" role="alert">
         {{ message }}
     </div>
     {% endfor %}
-    {% endif %}
+    {% endif %} -->
     <hr>
         <h1>The items in your shopping list are:</h1>
         <!-- Welcome {{ user.username }}!  -->
@@ -86,7 +86,7 @@
     
     {% endif %} <!-- authentication end if -->
 
-    <script>
+    <!-- <script>
         /* The alert we set up above earlier will not go away by itself once displayed so we'll use a 
         standard JavaScript setTimeout function to dismiss it. */
         setTimeout(function() {
@@ -98,7 +98,7 @@
             /* This will close the alert after 3000 milliseconds (i.e 3 seconds)   */
             alert.close();
         }, 3000);
-    </script>
+    </script> -->
 
     {% endblock %}
 

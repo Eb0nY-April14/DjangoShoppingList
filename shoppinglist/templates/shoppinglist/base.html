@@ -43,7 +43,14 @@
                 </li>
   
                 {% if user.is_authenticated %}
-                <!-- <p>{{user}}</p> -->
+                            <!-- <p>{{user}}</p> -->
+                {% if messages %}
+                {% for message in messages %}
+                <div id="msg" class="alert alert-info" role="alert">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
                 <p>Welcome {{ user.username }}!</p> 
                 <hr>
                 <li class="nav-item">
@@ -80,6 +87,21 @@
         <i class="fab fa-instagram-square ms-3"></i>
         <i class="fab fa-youtube-square ms-3"></i></p>
 </footer>
+
+<script>
+    /* The alert we set up above earlier will not go away by itself once displayed so we'll use a 
+    standard JavaScript setTimeout function to dismiss it. */
+    setTimeout(function() {
+        // Gets the ID of our messages div.
+        let messages = document.getElementById("msg");
+        /* This will assign a new Bootstrap alert to 'alert' variable & pass in the 'msg' ID 
+        that we've just got. */
+        let alert = new bootstrap.Alert(messages);
+        /* This will close the alert after 3000 milliseconds (i.e 3 seconds)   */
+        alert.close();
+    }, 3000);
+</script>
+
 </body>
 
 </html>
