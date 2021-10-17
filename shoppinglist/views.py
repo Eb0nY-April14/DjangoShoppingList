@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import DeleteView
 from .forms import ItemForm
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 from django.contrib.auth.views import LoginView
 
@@ -14,6 +15,8 @@ class CustomLoginView(LoginView):
     redirect_authenticated_user = True
 
     def get_success_url(self):
+        messages.add_message(
+            self.request, messages.SUCCESS, 'Logged in Successfully!')
         return reverse_lazy('get_shopping_list')
 
 

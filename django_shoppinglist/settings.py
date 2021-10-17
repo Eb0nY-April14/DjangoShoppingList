@@ -50,7 +50,7 @@ INSTALLED_APPS = [
 
 
 LOGIN_REDIRECT_URL = 'shoppinglist/shoppinglist.html'
-# LOGOUT_REDIRECT_URL = 'shoppinglist/index.html'
+# LOGOUT_REDIRECT_URL = 'shoppinglist/shoppinglist.html'
 
 
 MIDDLEWARE = [
