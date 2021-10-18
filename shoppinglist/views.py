@@ -5,6 +5,9 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 
 from django.contrib.auth.views import LoginView
+# from django.contrib.auth import login
+# from django_shoppinglist import helpers
+from django.contrib import auth
 
 from .models import ShoppingListItem
 
@@ -19,6 +22,25 @@ class CustomLoginView(LoginView):
             self.request, messages.SUCCESS, 'Logged in Successfully!')
         return reverse_lazy('get_shopping_list')
 
+
+def logout(request):
+    auth.logout(request)
+    template_name = 'shoppinglist/logout.html'
+    return render(request, template_name)
+
+
+#     url(r'^accounts/logout/$', 
+#     auth_views.logout, 
+#     {'template_name': 'blog/logout.html'}, 
+#     name='logout'
+# )
+
+#     return reverse_lazy('login.html') 
+#     # return render(request, 'shoppinglist/logout.html')
+
+# def logout(request):
+#     auth.logout(request)
+#     return render(request,'blog/logout.html')
 
 # Create your views here.
 def get_shopping_list(request):

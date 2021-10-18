@@ -1,7 +1,9 @@
 {% extends 'shoppinglist/base.html' %}
+
+{% block content %}
+
     <title>Edit Shopping List Item</title>
 
-    {% block content %}
     {% if user.is_authenticated %}
         <h1>Edit an item in your shopping list:</h1>
         <form method="POST">
@@ -42,7 +44,7 @@
         });
     </script>
 
-    {% endblock %}
+{% endblock %}
 
     
         

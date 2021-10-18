@@ -1,6 +1,9 @@
 {% extends 'shoppinglist/base.html' %}
+
+{% block content %}
+
 <title>Home Page</title>
-    {% block content %}
+
     {% if user.is_authenticated %}
     <!-- <p>{{user}}</p> -->
     <!-- {% if messages %}
@@ -77,7 +80,7 @@
         leaving you happy and fulfilled at the end. 
     </p>
     <p> 
-        Please <a href="/login">sign in</a> if you already have an account or 
+        Please <a href="shoppinglist/login">sign in</a> if you already have an account or 
         <a href="#">sign up</a> for a new account to enjoy the benefits 
         this app has to offer.
     </p>   
@@ -100,6 +103,6 @@
         }, 3000);
     </script> -->
 
-    {% endblock %}
+{% endblock %}
 
 

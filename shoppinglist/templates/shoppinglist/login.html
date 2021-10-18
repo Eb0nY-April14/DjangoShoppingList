@@ -1,3 +1,9 @@
+{% extends 'shoppinglist/base.html' %}
+
+{% block content %}
+
+<title>Login Page</title>
+
 <h1>Login</h1>
 
 <form method="POST">
@@ -5,3 +11,9 @@
     {{form.as_p}}
     <input type="submit" value="Login">
 </form>
+<p>Don't have an account? <a href="#">Register</a> here</p>
+
+{% endblock content %}
+
+
+

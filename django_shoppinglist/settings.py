@@ -37,7 +37,6 @@ ALLOWED_HOSTS = ['shoppinglist-planner.herokuapp.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -46,11 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'shoppinglist',
+    'django.contrib.admin',
 ]
 
 
 LOGIN_REDIRECT_URL = 'shoppinglist/shoppinglist.html'
-# LOGOUT_REDIRECT_URL = 'shoppinglist/shoppinglist.html'
+LOGOUT_REDIRECT_URL = 'shoppinglist/shoppinglist.html'
 
 
 MIDDLEWARE = [
