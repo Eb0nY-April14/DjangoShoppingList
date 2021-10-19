@@ -19,7 +19,7 @@ from django.urls import path, include
 # file to the line after this comment but we've summed them all up there
 # cos it's getting too long
 from shoppinglist import views
-from shoppinglist.views import DeleteView, CustomLoginView
+from shoppinglist.views import DeleteView, CustomLoginView, RegisterView
 from django.contrib.auth.views import LogoutView
 
 
@@ -28,6 +28,7 @@ from django.contrib.auth.views import LogoutView
 urlpatterns = [
     path('login/', CustomLoginView.as_view(), name='login'),
     path('logout/', views.logout, name='logout'),
+    path('register/', RegisterView.as_view(), name='register'),
     # path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('admin/', admin.site.urls),
     path('', views.get_shopping_list, name='get_shopping_list'),

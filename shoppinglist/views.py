@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic.edit import DeleteView
+from django.views.generic.edit import DeleteView, FormView
 from .forms import ItemForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 
 from django.contrib.auth.views import LoginView
-# from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
 # from django_shoppinglist import helpers
 from django.contrib import auth
 
@@ -23,6 +24,24 @@ class CustomLoginView(LoginView):
         return reverse_lazy('get_shopping_list')
 
 
+class RegisterView(FormView):
+    template_name = 'shoppinglist/register.html'
+    form_class = UserCreationForm
+    redirect_authenticated_user = True
+    success_url = reverse_lazy('get_shopping_list')
+
+    def form_valid(self, form):
+        user = form.save()
+        if user is not None:
+            login(self.request, user)
+        return super(RegisterView, self).form_valid(form)
+
+    def get(self, *args, **kwargs):
+        if self.request.user.is_authenticated:
+            return redirect('get_shopping_list')
+        return super(RegisterView, self).get(*args, **kwargs)
+
+
 def logout(request):
     auth.logout(request)
     template_name = 'shoppinglist/logout.html'
@@ -38,9 +57,6 @@ def logout(request):
 #     return reverse_lazy('login.html') 
 #     # return render(request, 'shoppinglist/logout.html')
 
-# def logout(request):
-#     auth.logout(request)
-#     return render(request,'blog/logout.html')
 
 # Create your views here.
 def get_shopping_list(request):
@@ -50,6 +66,22 @@ def get_shopping_list(request):
     }
     return render(request, 'shoppinglist/shoppinglist.html', context)
 
+
+# def get_shopping_list(request):
+#     shoppinglistitems = ShoppingListItem.objects.all()
+#     context = {
+#         'shoppinglistitems': shoppinglistitems
+#     }
+#     # context['shoppinglistitems'] = context['shoppinglistitems'].filter(user=self.request.user)
+#     return render(request, 'shoppinglist/shoppinglist.html', context)
+
+
+# RESTRICT USER'S ACCESS TO OTHER USERS DATA
+# def get_context_data(self, **kwargs):
+#     context = get_shopping_list(request).get_context_data(**kwargs)
+#     # context['shoppinglistitems'] = context['shoppinglistitems'].filter(user=self.request.user)
+#     return context
+ 
 
 # This function based view will allow a user to add a new item to his list
 # & display his full list back
