@@ -10,7 +10,7 @@
             {% csrf_token %}
             {{ form.as_p }}
 
-            <button type="submit">Update Item</button>
+            <button class="btn btn-primary" type="submit">Update Item</button>
         </form>
         
     {% else %} <!-- If user is not authenticated -->

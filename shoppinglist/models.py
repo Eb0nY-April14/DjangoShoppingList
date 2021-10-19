@@ -3,10 +3,11 @@ from django.db import models
 
 
 # Create your models here.
+
 class ShoppingListItem(models.Model):
-    item_name = models.CharField(max_length=200, null=False, blank=False)
     # user = models.ForeignKey(
-    #    User, on_delete=models.CASCADE, related_name="list_items")
+    #     User, on_delete=models.CASCADE)
+    item_name = models.CharField(max_length=200, null=False, blank=False)
     unit_price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.IntegerField()
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
