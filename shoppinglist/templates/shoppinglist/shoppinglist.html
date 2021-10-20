@@ -6,13 +6,15 @@
 
     {% if user.is_authenticated %}
     <!-- <p>{{user}}</p> -->
+
     <!-- {% if messages %}
     {% for message in messages %}
     <div id="msg" class="alert alert-info" role="alert">
         {{ message }}
     </div>
     {% endfor %}
-    {% endif %} -->
+    {% endif %}
+     -->
     <hr>
         <h2>Items in your shopping list:</h2>
         <!-- Welcome {{ user.username }}!  -->
@@ -58,34 +60,35 @@
         <tr><td>Sorry!!! You currently have no items in your shopping list.</td></tr>
         {% endfor %}
         </table>
-        <a href="/add"><button class="btn btn-primary">Add an item</button></a>
-        <a href="/delete_list"><button class="btn btn-danger">Delete List</button></a>
+
+        <!-- <div class="text-center">  -->
+            <a href="/add"><button class="btn btn-primary btn-lg button-space">Add an item</button></a>
+            <a href="/delete_list"><button class="btn btn-danger btn-lg button-space">Delete List</button></a>
+        <!-- </div> -->
 
     {% else %} <!-- If user is not authenticated -->
-    <p>
-        Welcome to the Shopping List Planner, a one-stop app that 
-        helps you manage your shopping and keeps you within checks so you don't 
-        overspend on your budget.  
-    </p>
-    <p>
-        Have you ever been in a situation where you just got home from your weekly 
-        shopping exhausted and desiring a rest but suddenly realised as you unpack 
-        your shopping that you missed out on essential items needed by the kids for 
-        school lunch or the whole family and you had to jet back to the store to get
-        them thereby wasting fuel, time and energy?
-    </p>
-    <p>
-        We've all been there but do not worry any more as this app is designed to take 
-        care of such situation and ensure you have a pleasurable time while shopping  
-        leaving you happy and fulfilled at the end. 
-    </p>
-    <p> 
-        Please <a href="/login">log in</a> if you already have an account or 
-        <a href="#">sign up</a> for a new account to enjoy the benefits 
-        this app has to offer.
-    </p>   
-
-    <!--Sorry! You cannot view the shopping list because you are not currently logged in.-->
+        <p>
+            Welcome to the Shopping List Planner, a one-stop app that 
+            helps you manage your shopping and keeps you within checks so you don't 
+            overspend on your budget.  
+        </p>
+        <p>
+            Have you ever been in a situation where you just got home from your weekly 
+            shopping exhausted and desiring a rest but suddenly realised as you unpack 
+            your shopping that you missed out on essential items needed by the kids for 
+            school lunch or the whole family and you had to jet back to the store to get
+            them thereby wasting fuel, time and energy?
+        </p>
+        <p>
+            We've all been there but do not worry any more as this app is designed to take 
+            care of such situation and ensure you have a pleasurable time while shopping  
+            leaving you happy and fulfilled at the end. 
+        </p>
+        <p> 
+            Please <a href="/login">log in</a> if you already have an account or 
+            <a href="{% url 'register' %}">sign up</a> for a new account to enjoy the benefits 
+            this app has to offer.
+        </p> 
     
     {% endif %} <!-- authentication end if -->
 

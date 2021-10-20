@@ -38,3 +38,13 @@
   .navbar-collapse {
     justify-content: flex-end;
   }
+
+  .button-space {
+    position: relative;
+    margin: 50px;  
+    /*text-align: center; */
+  }
+
+  .label {
+    margin-left: 50px;
+  }
