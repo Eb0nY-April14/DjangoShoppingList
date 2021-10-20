@@ -47,13 +47,6 @@
   
                 {% if user.is_authenticated %}
                             
-                {% if messages %}
-                {% for message in messages %}
-                <div id="msg" class="alert alert-info" role="alert">
-                    {{ message }}
-                </div>
-                {% endfor %}
-                {% endif %}
                 <p>Welcome {{ user.username }}!</p> 
                 <hr>
                 <li class="nav-item">
@@ -76,6 +69,18 @@
     </div>
 </nav>
 
+<div class="container">
+    <div class="row">
+        {% if messages %}
+        {% for message in messages %}
+            <div id="msg" class="alert alert-info" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
 <main class="flex-shrink-0 main-bg">
     {% block content %}
     <!-- Content Goes here -->
@@ -97,11 +102,7 @@
     setTimeout(function() {
         // Gets the ID of our messages div.
         let messages = document.getElementById("msg");
-        /* This will assign a new Bootstrap alert to 'alert' variable & pass in the 'msg' ID 
-        that we've just got. */
-        let alert = new bootstrap.Alert(messages);
-        /* This will close the alert after 3000 milliseconds (i.e 3 seconds)   */
-        alert.close();
+        messages.style.display = "none"; 
     }, 3000);
 </script>
 
