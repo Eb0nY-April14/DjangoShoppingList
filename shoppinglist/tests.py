@@ -33,4 +33,4 @@ class ModelTest(TestCase):
         self.assertEqual(self.shoppinglistitem.done_status, True)
 
     # def test_calculate_total_price(self):
-    #     totalprice = unit_price
+    #     totalprice = unit_price * quantity

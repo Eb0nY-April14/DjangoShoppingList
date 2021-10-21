@@ -58,7 +58,7 @@
                     <a class="nav-link" href="{% url 'register' %}">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
                 </li>
                 {% endif %}
             </ul>
@@ -87,11 +87,13 @@
     {% endblock content %}
 </main>
 
+
 <!-- Footer -->
 <footer class="footer mt-auto py-3 dark-bg">
-    <p class="m-0 text-center text-white">Made by Christiana Temiola</p>
-    <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-        <i class="fab fa-twitter-square ms-3"></i>
+    <p class="m-0 text-center .text-dark">Made by Christiana Temiola</p>
+    <p class="m-0 text-center .text-dark">Follow us: 
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="visit our Facebook page (opens ina new tab)"><i class="fab fa-facebook-square ms-3"></i></a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="visit our Twitter page (opens ina new tab)"><i class="fab fa-twitter-square ms-3"></i></a>
         <i class="fab fa-instagram-square ms-3"></i>
         <i class="fab fa-youtube-square ms-3"></i></p>
 </footer>

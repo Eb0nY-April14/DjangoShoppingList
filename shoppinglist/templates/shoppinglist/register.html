@@ -4,14 +4,18 @@
 
 <title>Sign Up Page</title>
 
-<h1 class="text-center">Sign Up</h1>
+<h1 class="text-center heading">Sign Up</h1>
 
-<form class="label" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <!-- <input type="submit" value="Register"> -->
-    <button class="btn btn-success btn-lg text-center button-space">Sign Up</button>
-</form>
+<div clss="container"> 
+    <div class="row"> 
+        <form class="form-center" method="POST">  <!--  -->
+            {% csrf_token %}
+            {{form.as_p}}
+            <!-- <input type="submit" value="Register"> -->
+            <button class="btn btn-success btn-lg text-center button-space">Sign Up</button>
+        </form>
+    </div>
+</div>
 <p class="text-center">Already have an account? <a href="/login">Login</a> here</p>
 
 {% endblock content %}
