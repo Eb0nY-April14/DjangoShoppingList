@@ -41,46 +41,48 @@
    <!-- Navigation -->
     <!--  This will appear on all pages -->
 
-<nav class="navbar navbar-expand-md navbar-light bg-white">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/"><span class="brand">
-            Sh<span class="red-o">o</span>ppingList<span class="thin">|Planner
-            </span></span></span></a>
+<!-- <div class="container">
+    <div class="row">  -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/"><span class="brand">
+                Sh<span class="red-o">o</span>ppingList<span class="thin">|Planner
+                </span></span></span></a>
 
-        <img class="relative" src="{% static 'images/shopping_list_image.jpg' %}"  alt="Shopping List Image">
-        <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button> 
-        <div class="collapse navbar-collapse" id="main-navigation">  <!-- navbarText-->
-            <ul class="navbar-nav">  <!--me-auto mb-2 mb-lg-0-->
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
+            <img class="relative" src="{% static 'images/shopping_list_image.jpg' %}"  alt="Shopping List Image">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
+            <div class="collapse navbar-collapse" id="navbarText">  <!-- main-navigation --> 
+                <ul class="navbar-nav">  <!-- me-auto mb-2 mb-lg-0 -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
   
-                {% if user.is_authenticated %}
-                            
-                <p>Welcome {{ user.username }}!</p> 
-                <hr>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                </li>
+                    {% if user.is_authenticated %}
+                                
+                    <p class="greeting">Welcome {{ user.username }}!</p> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
 
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'register' %}">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
-                </li>
-                {% endif %}
-            </ul>
-            <span class="navbar-text text-muted">
-                takes the stress out of shopping
-            </span>
-        </div>
-    </div>
-</nav>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <span class="navbar-text text-muted">
+                    takes the stress out of shopping
+                </span>
+            </div>
+        </nav>
+    <!-- </div>
+</div> -->
 
 <div class="container">
     <div class="row">
@@ -102,12 +104,12 @@
 
 <!-- Made by Christiana Temiola -->
 <!-- Footer -->
-<footer class="footer mt-auto py-3 dark-bg">
-    <p class="m-0 text-center .text-dark footer-weight">
+<footer class="footer mt-auto py-3 dark-bg navbar-dark bg-dark">
+    <p class="m-0 text-center text-white footer-weight">
         Christiana Temiola &copy;2021 <br />
         All rights reserved.
     </p>
-    <p class="m-0 text-center .text-dark"><span class="footer-weight">Follow us:</span> 
+    <p class="m-0 text-center .text-dark"><span class="footer-weight text-white">Follow us:</span> 
         <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="visit our Facebook page (opens in a new tab)"><i class="fab fa-facebook-square ms-3"></i></a>
         <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="visit our Twitter page (opens in a new tab)"><i class="fab fa-twitter-square ms-3"></i></a>
         <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="visit our Instagram page (opens in a new tab)"><i class="fab fa-instagram-square ms-3"></i></a>

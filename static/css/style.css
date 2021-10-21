@@ -14,7 +14,7 @@
   body {
     padding: 0;
     margin: 0;
-    background: #7eaa17;
+    /* background: #7eaa17; */
   }
 
   .navbar {
@@ -73,4 +73,8 @@
 
   .para-size {
     font-size: 1.5em;
+  }
+
+  p.greeting {
+    color: white;
   }

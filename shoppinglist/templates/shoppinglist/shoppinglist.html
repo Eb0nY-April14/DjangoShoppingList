@@ -22,6 +22,7 @@
 <div class="container">
     <div class="row"> 
         <table class="table table-dark">
+            <!-- <thead>  -->
             <tr>
                 <th>Item Name</th>
                 <th>Quantity</th>
@@ -29,9 +30,11 @@
                 <th>Total Price</th>
                 <th>Date Created</th>
                 <th>Date Updated</th>
-            </tr> 
-        {% for shoppinglistitem in shoppinglistitems %}
+            </tr>
+            <!-- </thead>  -->
+            {% for shoppinglistitem in shoppinglistitems %}
         <!-- This will render in a table format the values of the 'shoppinglistitems' keys created within our 'context' variable in views.py -->
+            <!-- <tbody>  -->
             <tr>
                 {% if shoppinglistitem.done_status %} 
                     <td><strike>{{ shoppinglistitem.item_name }}</strike></td> 
@@ -48,25 +51,26 @@
                     <td>{{ shoppinglistitem.date_created }}</td> 
                     <td>{{ shoppinglistitem.date_updated }}</td> 
                 {% endif %} 
-                <td>
+                    <td>
                     <a href="/edit/{{ shoppinglistitem.id }}">
                         <button class="btn btn-primary">Edit item</button>
                     </a>    
-                </td>
-                <td>
-                    <a href="{% url 'shoppinglistitem-delete' shoppinglistitem.id  %}">
-                        <button class="btn btn-danger">Delete item</button>
-                    </a>    
-                </td>
-                <td>
-                    <a href="/bought/{{ shoppinglistitem.id }}">
-                        <button class="btn btn-primary">Bought item</button>
-                    </a>    
-                </td> 
+                    </td>
+                    <td>
+                        <a href="{% url 'shoppinglistitem-delete' shoppinglistitem.id  %}">
+                            <button class="btn btn-danger">Delete item</button>
+                        </a>    
+                    </td>
+                    <td>
+                        <a href="/bought/{{ shoppinglistitem.id }}">
+                            <button class="btn btn-primary">Bought item</button>
+                        </a>    
+                    </td> 
             </tr>
-        {% empty %}
-        <tr><td>Sorry!!! You currently have no items in your shopping list.</td></tr>
-        {% endfor %}
+            {% empty %}
+                <tr><td>Sorry!!! You currently have no items in your shopping list.</td></tr>
+            {% endfor %}
+            <!-- </tbody> -->
         </table>
     </div>
 </div>
