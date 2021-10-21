@@ -77,7 +77,7 @@
 
     {% else %} <!-- If user is not authenticated -->
     <div class="container"> 
-        <div class="row heading"> 
+        <div class="row heading para-size"> 
             <p>
                 Welcome to the Shopping List Planner, a one-stop app that 
                 helps you manage your shopping and keeps you within checks so you don't 
@@ -104,20 +104,6 @@
     </div> 
     
     {% endif %} <!-- authentication end if -->
-
-    <!-- <script>
-        /* The alert we set up above earlier will not go away by itself once displayed so we'll use a 
-        standard JavaScript setTimeout function to dismiss it. */
-        setTimeout(function() {
-            // Gets the ID of our messages div.
-            let messages = document.getElementById("msg");
-            /* This will assign a new Bootstrap alert to 'alert' variable & pass in the 'msg' ID 
-            that we've just got. */
-            let alert = new bootstrap.Alert(messages);
-            /* This will close the alert after 3000 milliseconds (i.e 3 seconds)   */
-            alert.close();
-        }, 3000);
-    </script> -->
 
 {% endblock %}
 
