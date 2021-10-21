@@ -36,4 +36,5 @@ urlpatterns = [
     path('edit/<item_id>', views.edit_item, name='edit_item'),
     path('shoppinglistitem-delete/<int:pk>/', DeleteView.as_view(), name='shoppinglistitem-delete'),
     path('delete_list', views.delete_list, name='delete_list'),
+    path('bought/<item_id>', views.bought_item, name='bought_item'),
 ]

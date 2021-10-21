@@ -57,6 +57,11 @@
                     <a href="{% url 'shoppinglistitem-delete' shoppinglistitem.id  %}">
                         <button class="btn btn-danger">Delete item</button>
                     </a>    
+                </td>
+                <td>
+                    <a href="/bought/{{ shoppinglistitem.id }}">
+                        <button class="btn btn-primary">Bought item</button>
+                    </a>    
                 </td> 
             </tr>
         {% empty %}
@@ -66,8 +71,8 @@
     </div>
 </div>
         <div class="text-center"> 
-            <a href="/add"><button class="btn btn-primary btn-lg button-space">Add an item</button></a>
-            <a href="/delete_list"><button class="btn btn-danger btn-lg button-space">Delete List</button></a>
+            <a href="{% url 'add_item' %}"><button class="btn btn-primary btn-lg button-space">Add an item</button></a>
+            <a href="{% url 'delete_list' %}"><button class="btn btn-danger btn-lg button-space">Delete List</button></a>
         </div>
 
     {% else %} <!-- If user is not authenticated -->
