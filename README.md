@@ -91,3 +91,41 @@ The database schema for the ShoppingListItem Model is used to show the relations
 
     [Link to WhiteNoise](http://whitenoise.evans.io/en/stable/)
 
+    Frameworks, Libraries and Programs Used
+
+1. Git
+
+    * Git was used for version control by utilising the Gitpod terminal to commit to Git and push to GitHub.
+
+2. GitHub
+
+    * GitHub was used to store the project's code after being pushed from Git.
+
+3. Bootstrap
+
+  * Bootstrap 4 was used for styling
+
+4. Django
+
+  * The entire project anchors on this framework as it was used to build this app
+
+5. Whitenoise
+
+  * Since Heroku can't serve static files on its own, this external package was installed and used to serve all the static files on Heroku as it works well with it. WhiteNoise allows the web app to serve its own static files, making it a self-contained unit that can be deployed anywhere without relying on nginx, Amazon S3 or any other external service.
+
+
+## Testing
+
+PEP8 online validation tool was used to validate the code to ensure there were no syntax errors or improper code indentation. It passed the test as seen in the screenshot below:
+
+![PEP8 Testing](documentation/************.png)
+
+
+### Testing User Stories from User Experience (UX) Section
+
+i. As an Existing User who is logged in, I want to be able to view my shopping list and see what items I have purchased and the ones left. 
+
+  a. User logs in and if successful, he is redirected to the home page where he can view his shopping list as seen in the screenshot below:
+
+![view shopping Screenshot](documentation/view_shopping_screenshot.png)
+
