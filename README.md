@@ -87,7 +87,7 @@ The database schema for the ShoppingListItem Model is used to show the relations
 
     * When the code was run in Gitpod workspace, every part worked perfectly well but on the deployed site, Heroku, my static files were not loaded properly which affected my logo image and styling from displaying properly. I used cloudinary while setting up my app initially but it didn't work with my deployed app so I googled to find out the solution to this issue and found a very good article on stackoverflow that talked about this package called "whitenoise" and how great it works with Heroku and efficient it is in simplifying static file serving for Python web apps. I went to their website to have a read, it's pretty simple to get it up and running and in 3 easy steps, it was installed and worked like magic in solving the issue. See links below:
 
-    ![stackoverflow](https://stackoverflow.com/questions/58611205/images-are-not-shown-on-my-heroku-website-static-files-are-loaded-fine)
+    [Link to stackoverflow](https://stackoverflow.com/questions/58611205/images-are-not-shown-on-my-heroku-website-static-files-are-loaded-fine)
 
-    ![WhiteNoise](http://whitenoise.evans.io/en/stable/)
+    [Link to WhiteNoise](http://whitenoise.evans.io/en/stable/)
 
