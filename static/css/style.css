@@ -14,7 +14,11 @@
   body {
     padding: 0;
     margin: 0;
-    /* background: #7eaa17; */
+    /* bootstrap set the font-family & size to 1rem 
+    & I'm not able to override them with my own css */
+    font-family: 'Lato', sans-serif;
+    font-size: 2rem;
+    /* background: #f7f7f4; */
   }
 
   .navbar {
@@ -78,3 +82,35 @@
   p.greeting {
     color: white;
   }
+
+  /********************************************************/
+  /*    MEDIA QUERIES TO CHANGE THE DEFAULT FONT          */
+  /*      SIZES FOR 4 BREAKPOINTS IN BOOTSTRAP            */
+  /********************************************************/
+
+  @media (min-width: 230px) {  
+    h2 {font-size:1rem;} 
+  }
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {  
+  p {font-size:1.5rem;} /*1rem = 16px*/
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+  p {font-size:2rem;} 
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  p {font-size:2.5rem;} /*1rem = 16px*/
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+  p {font-size:3rem;} /*1rem = 16px*/    
+}
+
+
+

@@ -5,107 +5,141 @@
 <title>Home Page</title>
 
     {% if user.is_authenticated %}
-    <!-- <p>{{user}}</p> -->
-
-    <!-- {% if messages %}
-    {% for message in messages %}
-    <div id="msg" class="alert alert-info" role="alert">
-        {{ message }}
-    </div>
-    {% endfor %}
-    {% endif %}
-     -->
+    
     <hr>
         <h2 class="text-center">View items in your shopping list:</h2>
-        <!-- Welcome {{ user.username }}!  -->
 
-<div class="container">
-    <div class="row"> 
-        <table class="table table-dark">
-            <!-- <thead>  -->
-            <tr>
-                <th>Item Name</th>
-                <th>Quantity</th>
-                <th>Unit Price</th>
-                <th>Total Price</th>
-                <th>Date Created</th>
-                <th>Date Updated</th>
-            </tr>
-            <!-- </thead>  -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-lg-2"><h5>Item Name</h5></div>
+            <div class="col-sm-12 col-lg-1"><h5>Quantity</h5></div>
+            <div class="col-sm-12 col-lg-1"><h5>Unit Price</h5></div>
+            <div class="col-sm-12 col-lg-1"><h5>Total Price</h5></div>
+            <div class="col-sm-12 col-lg-2"><h5>Date Created</h5></div>
+            <div class="col-sm-12 col-lg-2"><h5>Date Updated</h5></div>
+            <div class="col-sm-12 col-lg-1"><h5>Edit Button</h5></div>
+            <div class="col-sm-12 col-lg-1"><h5>Delete Button</h5></div>
+            <div class="col-sm-12 col-lg-1"><h5>Bought?</h5></div> 
+
             {% for shoppinglistitem in shoppinglistitems %}
-        <!-- This will render in a table format the values of the 'shoppinglistitems' keys created within our 'context' variable in views.py -->
-            <!-- <tbody>  -->
-            <tr>
-                {% if shoppinglistitem.done_status %} 
-                    <td><strike>{{ shoppinglistitem.item_name }}</strike></td> 
-                    <td><strike>{{ shoppinglistitem.quantity }}</strike></td> 
-                    <td><strike>{{ shoppinglistitem.unit_price }}</strike></td> 
-                    <td><strike>{{ shoppinglistitem.total_price }}</strike></td> 
-                    <td><strike>{{ shoppinglistitem.date_created }}</strike></td> 
-                    <td><strike>{{ shoppinglistitem.date_updated }}</strike></td> 
-                {% else %}
-                    <td>{{ shoppinglistitem.item_name }}</td> 
-                    <td>{{ shoppinglistitem.quantity }}</td> 
-                    <td>{{ shoppinglistitem.unit_price }}</td> 
-                    <td>{{ shoppinglistitem.total_price }}</td> 
-                    <td>{{ shoppinglistitem.date_created }}</td> 
-                    <td>{{ shoppinglistitem.date_updated }}</td> 
-                {% endif %} 
-                    <td>
+            {% if shoppinglistitem.done_status %} 
+            
+                <div class="col-sm-12 col-lg-2">
+                    <!-- <h6>Item Name</h6> -->
+                    <p><strike>{{ shoppinglistitem.item_name }}</strike></p> 
+                </div>
+                <div class="col-sm-12 col-lg-1">
+                    <!-- <h6>Quantity</h6> -->
+                    <p><strike>{{ shoppinglistitem.quantity }}</strike></p> 
+                </div>
+                <div class="col-sm-12 col-lg-1">
+                    <!-- <h6>Unit Price</h6> -->
+                    <p><strike>{{ shoppinglistitem.unit_price }}</strike></p>
+                </div>
+                <div class="col-sm-12 col-lg-1">
+                    <!-- <h6>Total Price</h6> -->
+                    <p><strike>{{ shoppinglistitem.total_price }}</strike></p>
+                </div>
+                <div class="col-sm-12 col-lg-2">
+                    <!-- <h6>Date Created</h6> -->
+                    <p><strike>{{ shoppinglistitem.date_created }}</strike></p> 
+                </div>
+                <div class="col-sm-12 col-lg-2">
+                    <!-- <h6>Date Updated</h6> -->
+                    <p><strike>{{ shoppinglistitem.date_updated }}</strike></p> 
+                </div>
+            
+            {% else %}
+                <div class="col-sm-12 col-md-2 col-lg-2">
+                    <!-- <h6>Item Name</h6> -->
+                    <p>{{ shoppinglistitem.item_name }}</p> 
+                </div>
+                <div class="col-sm-12 col-md-1 col-lg-1">
+                    <!-- <h6>Quantity</h6> -->
+                    <p>{{ shoppinglistitem.quantity }}</p> 
+                </div>
+                <div class="col-sm-12 col-md-1 col-lg-1">
+                    <!-- <h6>Unit Price</h6> -->
+                    <p>{{ shoppinglistitem.unit_price }}</p>
+                </div>
+                <div class="col-sm-12 col-md-1 col-lg-1">
+                    <!-- <h6>Total Price</h6> -->
+                    <p>{{ shoppinglistitem.total_price }}</p>
+                </div>
+                <div class="col-sm-12 col-md-2 col-lg-2">
+                    <!-- <h6>Date Created</h6> -->
+                    <p>{{ shoppinglistitem.date_created }}</p> 
+                </div>
+                <div class="col-sm-12 col-md-2 col-lg-2">
+                    <!-- <h6>Date Updated</h6> -->
+                    <p>{{ shoppinglistitem.date_updated }}</p> 
+                </div>
+            
+            {% endif %}
+            
+            <div class="col-sm-3 col-lg-1">
+                <!-- <h5>Edit Button</h5> -->
+                <p>
                     <a href="/edit/{{ shoppinglistitem.id }}">
                         <button class="btn btn-primary">Edit item</button>
                     </a>    
-                    </td>
-                    <td>
-                        <a href="{% url 'shoppinglistitem-delete' shoppinglistitem.id  %}">
-                            <button class="btn btn-danger">Delete item</button>
-                        </a>    
-                    </td>
-                    <td>
-                        <a href="/bought/{{ shoppinglistitem.id }}">
-                            <button class="btn btn-primary">Bought item</button>
-                        </a>    
-                    </td> 
-            </tr>
+                </p>
+            </div>
+            <div class="col-sm-3 col-lg-1">
+                <!-- <h5>Delete Button</h5> -->
+                <p>
+                    <a href="{% url 'shoppinglistitem-delete' shoppinglistitem.id  %}">
+                        <button class="btn btn-danger">Delete item</button>
+                    </a>    
+                </p>
+            </div>
+            <div class="col-sm-3 col-lg-1">
+                <!-- <h5>Bought?</h5> -->
+                <p>
+                    <a href="/bought/{{ shoppinglistitem.id }}">
+                        <button class="btn btn-primary">Bought item</button>
+                    </a>    
+                </p> 
+            </div>
+        
             {% empty %}
-                <tr><td>Sorry!!! You currently have no items in your shopping list.</td></tr>
-            {% endfor %}
-            <!-- </tbody> -->
-        </table>
-    </div>
-</div>
-        <div class="text-center"> 
-            <a href="{% url 'add_item' %}"><button class="btn btn-primary btn-lg button-space">Add an item</button></a>
-            <a href="{% url 'delete_list' %}"><button class="btn btn-danger btn-lg button-space">Delete List</button></a>
-        </div>
+                <p>Sorry!!! You currently have no items in your shopping list.</p>
+        {% endfor %}
+
+            <div> <!--class="text-center"-->
+                <a href="{% url 'add_item' %}"><button class="btn btn-primary btn-lg button-space">Add an item</button></a>
+                <a href="{% url 'delete_list' %}"><button class="btn btn-danger btn-lg button-space">Delete List</button></a>
+            </div>
+        </div> <!-- row div ends -->
+    </div> <!-- container div ends -->
 
     {% else %} <!-- If user is not authenticated -->
-    <div class="container"> 
-        <div class="row heading para-size"> 
-            <p>
-                Welcome to the Shopping List Planner, a one-stop app that 
-                helps you manage your shopping and keeps you within checks so you don't 
-                overspend on your budget.  
-            </p>
-            <p>
-                Have you ever been in a situation where you just got home from your weekly 
-                shopping exhausted and desiring a rest but suddenly realised as you unpack 
-                your shopping that you missed out on essential items needed by the kids for 
-                school lunch or the whole family and you had to jet back to the store to get
-                them thereby wasting fuel, time and energy?
-            </p>
-            <p>
-                We've all been there but do not worry any more as this app is designed to take 
-                care of such situation and ensure you have a pleasurable time while shopping  
-                leaving you happy and fulfilled at the end. 
-            </p>
-            <p> 
-                Please <a href="/login">log in</a> if you already have an account or 
-                <a href="{% url 'register' %}">sign up</a> for a new account to enjoy the benefits 
-                this app has to offer.
-            </p>
-        </div>
-    </div> 
+        <div class="container"> 
+            <div class="row heading para-size"> 
+                <p>
+                    Welcome to the Shopping List Planner, a one-stop app that 
+                    helps you manage your shopping and keeps you within checks so you don't 
+                    overspend on your budget.  
+                </p>
+                <p>
+                    Have you ever been in a situation where you just got home from your weekly 
+                    shopping exhausted and desiring a rest but suddenly realised as you unpack 
+                    your shopping that you missed out on essential items needed by the kids for 
+                    school lunch or the whole family and you had to jet back to the store to get
+                    them thereby wasting fuel, time and energy?
+                </p>
+                <p>
+                    We've all been there but do not worry any more as this app is designed to take 
+                    care of such situation and ensure you have a pleasurable time while shopping  
+                    leaving you happy and fulfilled at the end. 
+                </p>
+                <p> 
+                    Please <a href="/login">log in</a> if you already have an account or 
+                    <a href="{% url 'register' %}">sign up</a> for a new account to enjoy the benefits 
+                    this app has to offer.
+                </p>
+            </div>
+        </div> 
     
     {% endif %} <!-- authentication end if -->
 
