@@ -7,19 +7,19 @@
     {% if user.is_authenticated %}
     
     <hr>
-        <h2 class="text-center">View items in your shopping list:</h2>
+        <h2 class="headerspace text-center font-weight-bold">View items in your shopping list:</h2>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 col-lg-2"><h5>Item Name</h5></div>
-            <div class="col-sm-12 col-lg-1"><h5>Quantity</h5></div>
-            <div class="col-sm-12 col-lg-1"><h5>Unit Price</h5></div>
-            <div class="col-sm-12 col-lg-1"><h5>Total Price</h5></div>
-            <div class="col-sm-12 col-lg-2"><h5>Date Created</h5></div>
-            <div class="col-sm-12 col-lg-2"><h5>Date Updated</h5></div>
-            <div class="col-sm-12 col-lg-1"><h5>Edit Button</h5></div>
-            <div class="col-sm-12 col-lg-1"><h5>Delete Button</h5></div>
-            <div class="col-sm-12 col-lg-1"><h5>Bought?</h5></div> 
+            <div class="col-sm-12 col-lg-2"><h5 class="font-weight-bold">Item Name</h5></div>
+            <div class="col-sm-12 col-lg-1"><h5 class="font-weight-bold">Quantity</h5></div>
+            <div class="col-sm-12 col-lg-1"><h5 class="font-weight-bold">Unit Price</h5></div>
+            <div class="col-sm-12 col-lg-1"><h5 class="font-weight-bold">Total Price</h5></div>
+            <div class="col-sm-12 col-lg-2"><h5 class="font-weight-bold">Date Created</h5></div>
+            <div class="col-sm-12 col-lg-2"><h5 class="font-weight-bold">Date Updated</h5></div>
+            <div class="col-sm-12 col-lg-1"><h5 class="font-weight-bold">Edit Button</h5></div>
+            <div class="col-sm-12 col-lg-1"><h5 class="font-weight-bold">Delete Button</h5></div>
+            <div class="col-sm-12 col-lg-1"><h5 class="font-weight-bold">Bought?</h5></div> 
 
             {% for shoppinglistitem in shoppinglistitems %}
             {% if shoppinglistitem.done_status %} 

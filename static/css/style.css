@@ -83,6 +83,10 @@
     color: white;
   }
 
+  .headerspace {
+    margin-bottom: 30px;
+  }
+
   /********************************************************/
   /*    MEDIA QUERIES TO CHANGE THE DEFAULT FONT          */
   /*      SIZES FOR 4 BREAKPOINTS IN BOOTSTRAP            */
