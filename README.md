@@ -131,12 +131,80 @@ i. As an Existing User who is logged in, I want to be able to view my shopping l
 ![homePage/viewShoppingList Screenshot](documentation/views/view_shoppinglist_screenshot2.png)
 ![homePage/viewShoppingList Screenshot](documentation/views/view_shoppinglist_screenshot3.png)
 
+---
+
 ii. As an Existing User who is logged in, I want to be able to add a new item to my shopping list and view them during shopping.
 
-    a. User logs in and if successful, he is redirected to the home page where the "add" button is located. On clicking the add button, he is taken to the add item's form page and if he fills the form and submits it, the new item is added to the shopping list and he is taken back to the home page where he'll see his newly added item. See the screenshots below:  
+    a. User logs in and if successful, he is redirected to the home page where the "Add an item" button is located at the bottom of the page. See screenshot below: 
 
-![addShoppingList Screenshot](documentation/views/add_shoppinglist_screenshot1.png)
-![addShoppingList Screenshot](documentation/views/add_shoppinglist_screenshot2.png)
+![AddShoppingListButton Screenshot](documentation/views/add_item_button_screenshot.png)
+    
+    b. On clicking the add button, he is taken to the add item's form page and if he fills the form and submits it, the new item is added to the shopping list in the database and he is taken back to the home page where he'll see his newly added item. See the screenshots below:  
+
+![AddShoppingList Screenshot](documentation/views/add_shoppinglist_screenshot1.png)
+![AddShoppingList Screenshot](documentation/views/add_shoppinglist_screenshot2.png)
+
+---
 
 iii. As an Existing User, I want to be able to login to my account and add, view, modify or delete an item in my shopping list or delete my entire list.
 
+    a. When a user clicks on the app link or copies it into any search box such as Google, he lands on the welcome page. At the top right side of this page are the nav links, one of which is the "Login" link as seen in the screenshot below:
+
+![WelcomePage Screenshot](documentation/views/welcome_page_screenshot1.png)
+![welcomePage Screenshot](documentation/views/welcome_page_screenshot2.png)
+    
+    b. When he clicks on the "Login" link, he is taken to the login form page where he can fill in his details as seen in the screenshot below: 
+
+![LoginPage Screenshot](documentation/views/login_page_screenshot1.png)
+![LoginPage Screenshot](documentation/views/login_page_screenshot2.png)
+
+---
+
+iv. As an Existing User who is logged in, I want to be able to mark an item in my list as either bought or unbought. 
+
+    a. The third button beside each item on the home/viewing page is the one for toggling an item to mark it as either done when it's purchased or not. When the button is clicked, it strikes out the item as "bought" and is moved to the bottom of the row and if clicked again, the "strike out" mark is removed & the item is moved back up which means it hasn't been bought yet. See screenshot below:
+
+Items marked as unbought: 
+![UnstrikeNotBoughtItem Screenshot](documentation/views/not_bought_item_screenshot.png)
+
+Items marked as bought: 
+![StrikeOutBoughtItem Screenshot](documentation/views/bought_item_screenshot.png)
+
+---
+
+v. As a First time User, I want to be able to sign up for an account in order to enjoy all the features of the app. 
+
+    a. When a user clicks on the app link or copies it into any search box such as Google, he lands on the welcome page. At the top right side of this page are the nav links, one of which is the "Register" link as seen in the screenshot below:
+
+![WelcomePage Screenshot](documentation/views/welcome_page_screenshot1.png)
+![welcomePage Screenshot](documentation/views/welcome_page_screenshot2.png)
+    
+    b. If he clicks on the "Register" link, he is taken to the "Sign Up" form page where he can fill in his details as seen in the screenshot below: 
+
+![SignUpPage Screenshot](documentation/views/signup_page_screenshot1.png)
+![SignUpPage Screenshot](documentation/views/signup_page_screenshot2.png) 
+
+---
+
+vi. As an Existing User, I want to be able to logout of my account to keep my information private and secure.
+
+    a. The "Logout" link is displayed to the user on the nav bar at the top right side of the home page once he is authenticated. See screenshot below:
+
+![LogoutPage Screenshot](documentation/views/logout_link_screenshot.png)
+
+    b. When he clicks on the "Logout" link, he is logged out of his account and a message is displayed to confirm his successful logout operation as seen in the screenshot below:
+
+![LogoutPage Screenshot](documentation/views/logout_message_screenshot.png) 
+
+---
+
+vii. As an Existing User, I want to be able to retrieve and make changes on any item on my shopping list.
+
+    a. The first button beside each item on the home/viewing page is the "Edit item" button which the User needs for updating an item in the database as shown in the screenshot below: 
+
+![EditShoppingListButton Screenshot](documentation/views/edit_item_button_screenshot.png)
+    
+    b. On clicking the "Edit item" button, the User is taken to the edit item's form page where the input fields are prepopulated with their current values in the database and waiting for the user to make changes to the relevant field(s). After making his desired changes, he clicks on the "Update item" button and the changes are made in the database and user is redirected back to the home page to view his shopping list in order to confirm that the changes has actually been made. See screenshot below:
+
+![EditShoppingListItem Screenshot](documentation/views/edit_item_page_screenshot1.png)
+![EditShoppingListItem Screenshot](documentation/views/edit_item_page_screenshot2.png)
