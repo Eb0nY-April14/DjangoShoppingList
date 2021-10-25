@@ -125,7 +125,18 @@ PEP8 online validation tool was used to validate the code to ensure there were n
 
 i. As an Existing User who is logged in, I want to be able to view my shopping list and see what items I have purchased and the ones left. 
 
-  a. User logs in and if successful, he is redirected to the home page where he can view his shopping list as seen in the screenshot below:
+    a. User logs in and if successful, he is redirected to the home page where he can view his shopping list as seen in the screenshots below:
 
-![view shopping Screenshot](documentation/view_shopping_screenshot.png)
+![homePage/viewShoppingList Screenshot](documentation/views/view_shoppinglist_screenshot1.png)
+![homePage/viewShoppingList Screenshot](documentation/views/view_shoppinglist_screenshot2.png)
+![homePage/viewShoppingList Screenshot](documentation/views/view_shoppinglist_screenshot3.png)
+
+ii. As an Existing User who is logged in, I want to be able to add a new item to my shopping list and view them during shopping.
+
+    a. User logs in and if successful, he is redirected to the home page where the "add" button is located. On clicking the add button, he is taken to the add item's form page and if he fills the form and submits it, the new item is added to the shopping list and he is taken back to the home page where he'll see his newly added item. See the screenshots below:  
+
+![addShoppingList Screenshot](documentation/views/add_shoppinglist_screenshot1.png)
+![addShoppingList Screenshot](documentation/views/add_shoppinglist_screenshot2.png)
+
+iii. As an Existing User, I want to be able to login to my account and add, view, modify or delete an item in my shopping list or delete my entire list.
 
