@@ -415,34 +415,10 @@ x. As an Existing User, I want to be able to enter my item's quantity and unit p
     * If there is no error detected in the build, it displays a message of "Build finished" and a message which says "Your app has been deployed successfully".
 
     * Click on the "Open app" button at the top right of the page to view your app.
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
 
 View the live project [here](https://shoppinglist-planner.herokuapp.com/)
 
-
 View the GitHub Repository [here](https://github.com/Eb0nY-April14/DjangoShoppingList)
-
-
 
 ---
 
