@@ -341,6 +341,8 @@ x. As an Existing User, I want to be able to enter my item's quantity and unit p
         URL"))
         }
 
+    * At the terminal, make Migrations using the command: python3 manage.py migrate
+
     * Save the file again and that's it! Heroku database is now being used as the backend.      
 
 4. Get our static and media files stored on Cloudinary
@@ -393,6 +395,26 @@ x. As an Existing User, I want to be able to enter my item's quantity and unit p
     * Add your Heroku Hostname to "ALLOWED_HOSTS" in the "settings.py" file which comprises of your Heroku app name followed by ".herokuapp.com", separate them with a comma and add beside it 'localhost'. The 'localhost' added will enable you run your app locally too i.e
     ALLOWED_HOSTS = ["PROJ_NAME.herokuapp.com", "localhost"]
 
+    * Create 3 new folders at the same top level directory as manage.py file and name them media, static and templates
+
+    * Create another important file named Procfile on the top level directory as it contains information Heroku needs in order to know how to run your project.
+
+    * Open the Procfile and type the following line:
+        web: gunicorn PROJ_NAME.wsgi
+
+    * Save your Procfile and Add, Commit and Push to your repository using the following commands:
+        git add .
+        git commit -m “Deployment Commit”
+        git push
+
+    * Deploy Content manually through heroku e.g Github as deployment method, on main branch.
+    To do this, go back to your Heroku dashboard and click on the "Deploy" tab located at the top of the page. Under the "Deployment method" section,click on "GitHub" then search for your repository, select it and click on the "Connect" button beside it to connect your GitHub account to Heroku. 
+
+    * Next, scroll down to the bottom of the page and click on the "Deploy Branch" button and then click on the "View Build log" link in order to be able to watch the deployment as it's happening in the build log and it will pop this out in a full view page for you to see.
+
+    * If there is no error detected in the build, it displays a message of "Build finished" and a message which says "Your app has been deployed successfully".
+
+    * Click on the "Open app" button at the top right of the page to view your app.
     
 
 
@@ -413,6 +435,8 @@ x. As an Existing User, I want to be able to enter my item's quantity and unit p
 
 
 
+---
+
 View the live project [here](https://shoppinglist-planner.herokuapp.com/)
 
 
@@ -420,7 +444,7 @@ View the GitHub Repository [here](https://github.com/Eb0nY-April14/DjangoShoppin
 
 
 
-
+---
 
 * Credits
 
