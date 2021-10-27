@@ -1,5 +1,7 @@
 {% extends 'shoppinglist/base.html' %}
 
+{% load static %}
+
 {% block content %}
 
     <title>Add Shopping List Item</title>
@@ -25,7 +27,7 @@
     </div>        
     {% endif %} <!-- authentication end if -->
 
-    <script>
+    <!-- <script>
         let price = document.getElementById('id_unit_price');
         console.log("The Price is: ", price);
         price.addEventListener('change', function(event) {
@@ -65,6 +67,8 @@
             let totalPrice = document.getElementById('id_total_price');
             console.log("The Total Price of your item is:", totalPrice);
         });
-    </script>
+    </script>   -->
+
+    <script src="{% static 'js/script.js' %}" type="text/javascript" ></script> 
 
 {% endblock %} 

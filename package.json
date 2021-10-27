@@ -1,0 +1,22 @@
+{
+  "name": "djangoshoppinglist",
+  "version": "1.0.0",
+  "description": "![Shopping List Image](static/images/shopping_list_image.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eb0nY-April14/DjangoShoppingList.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eb0nY-April14/DjangoShoppingList/issues"
+  },
+  "homepage": "https://github.com/Eb0nY-April14/DjangoShoppingList#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
