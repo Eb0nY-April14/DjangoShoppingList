@@ -60,7 +60,7 @@ def logout(request):
 
 # Create your views here.
 def get_shopping_list(request):
-    shoppinglistitems = ShoppingListItem.objects.all()
+    shoppinglistitems = ShoppingListItem.objects.filter(user=request.user.id)
     context = {
         'shoppinglistitems': shoppinglistitems
     }
@@ -73,6 +73,7 @@ def add_item(request):
     if request.method == "POST":
         form = ItemForm(request.POST)
         if form.is_valid():
+            form.instance.user = request.user
             form.save()
             return redirect('get_shopping_list')
     # This will create an instance of our item form.
@@ -90,6 +91,7 @@ def edit_item(request, item_id):
     if request.method == "POST":
         form = ItemForm(request.POST, instance=listitem)
         if form.is_valid():
+            form.instance.user = request.user
             form.save()
             return redirect('get_shopping_list')
     form = ItemForm(instance=listitem)
