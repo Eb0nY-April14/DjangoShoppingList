@@ -81,15 +81,27 @@ The database schema for the ShoppingListItem Model is used to show the relations
     To solve this issue, in my forms.py file, I changed the order in which the fields were placed by putting the "unit price" above the "quantity". I also attached an event listener to the "unit price" field to listen for a change in that field too and it worked.
     See screenshot below:
 
-    ![](documentation/**************.png)
+    ![Total Price Error Screenshot](documentation/bugs/total_priceNaN_error.png)
 
-    * Another issue encountered relates to the ids given to form inputs by Django and the ones I gave in my function. Since I used Django template form to set up my forms and Django builds the input fields automatically based on the fields I set up in my forms.py file and gives each an ID also. I didn't know about this Django ID so I gave each input element in my function another ID and during execution of the script, it had issues getting them since they don't exist. I was stuck on this issue for a long period without making a headway until I got in touch with tutor support who directed me to use the dev tools to inspect the IDs given to these elements by Django, copy them and replace the ones I have in my function with these copied IDs and when I did this, the problem was resolved and total price was calculated rightly.
+    * Another issue encountered relates to the ids given to form inputs by Django and the ones I gave in my function. Since I used Django template form to set up my forms and Django builds the input fields automatically based on the fields I set up in my forms.py file and gives each an ID also. I didn't know that Django has already given all inputs their IDs so I gave each input element in my function another ID and during execution of the script, there was conflict so it had issues with "document.getElementById()" getting the ID I gave my message in order for the "Log in Successfully" message to be displayed to the user since that id doesn't exist. I was stuck on this issue for a long period without making a headway until I got in touch with tutor support who directed me to use the dev tools to inspect the IDs given to these elements by Django, copy them and replace the ones I have in my function with these copied IDs and when I did this, the problem was resolved as I used the "msg" id given by Django and total price was calculated rightly. 
+    I also had an issue with making the "Log in Successfully" message go away after 3 seconds of display and after much research & with tutor support, I discovered that in the JavaScript function, a mix of Django messaging template and bootstrap message alert were used which caused conflict between the two. I found a useful resource on stack overflow that helped me resolve the issue. See screenshot below:
 
-    * When the code was run in Gitpod workspace, every part worked perfectly well but on the deployed site, Heroku, my static files were not loaded properly which affected my logo image and styling from displaying properly. I used cloudinary while setting up my app initially but it didn't work with my deployed app so I googled to find out the solution to this issue and found a very good article on stackoverflow that talked about this package called "whitenoise" and how great it works with Heroku and efficient it is in simplifying static file serving for Python web apps. I went to their website to have a read, it's pretty simple to get it up and running and in 3 easy steps, it was installed and worked like magic in solving the issue. See links below:
+![LoginSuccessfullyMessage not rendering & closing Screenshot](documentation/bugs/login_message_id_conflict.png)
+
+![LoginSuccessfullyMessage not rendering & closing Screenshot](documentation/bugs/conflict_set_timeout_function.png)
+
+
+    * When the code was run in Gitpod workspace, every part worked perfectly well but on the deployed site, Heroku, my static files were not loaded properly which affected my logo image and styling from displaying properly. I used cloudinary while setting up my app initially but it didn't work with my deployed app as shown in the screenshot below:
+
+![Cloudinary not working Error Screenshot](documentation/bugs/cloudinary_failed_on_heroku.png)
+    
+    In a bid to find a solution to this issue, I searched online and found a very good resource on stackoverflow that talked about this package called "whitenoise" and how great it works with Heroku and efficient it is in simplifying static file serving for Python web apps. I went to their website to have a read, it's pretty simple to get it up and running and in 3 easy steps, it was installed and worked like magic in solving the issue. See links below:
 
     [Link to stackoverflow](https://stackoverflow.com/questions/58611205/images-are-not-shown-on-my-heroku-website-static-files-are-loaded-fine)
 
     [Link to WhiteNoise](http://whitenoise.evans.io/en/stable/)
+
+    ---
 
     Frameworks, Libraries and Programs Used
 
@@ -121,7 +133,7 @@ PEP8 online validation tool was used to validate the code to ensure there were n
 ![PEP8 Testing](documentation/************.png)
 
 
-### Testing User Stories from User Experience (UX) Section
+### Manual Testing: Testing User Stories from User Experience (UX) Section
 
 i. As an Existing User who is logged in, I want to be able to view my shopping list and see what items I have purchased and the ones left. 
 
@@ -135,14 +147,14 @@ i. As an Existing User who is logged in, I want to be able to view my shopping l
 
 ii. As an Existing User who is logged in, I want to be able to add a new item to my shopping list and view them during shopping.
 
-    a. User logs in and if successful, he is redirected to the home page where the "Add an item" button is located at the bottom of the page. See screenshot below: 
+    a. The User will find the "Add an item" button close to the footer section of the home page. See screenshot below: 
 
-![AddShoppingListButton Screenshot](documentation/views/add_item_button_screenshot.png)
+![AddItemButton Screenshot](documentation/views/add_item_button_screenshot.png)
     
-    b. On clicking the add button, he is taken to the add item's form page and if he fills the form and submits it, the new item is added to the shopping list in the database and he is taken back to the home page where he'll see his newly added item. See the screenshots below:  
+    b. On clicking the "Add an item" button, he is taken to the add item's form page and if he fills the form and submits it, the new item is added to the shopping list in the database and he is taken back to the home page where he'll see his newly added item. See the screenshots below:  
 
-![AddShoppingList Screenshot](documentation/views/add_shoppinglist_screenshot1.png)
-![AddShoppingList Screenshot](documentation/views/add_shoppinglist_screenshot2.png)
+![AddItemPage Screenshot](documentation/views/add_item_page_screenshot1.png)
+![AddItemPage Screenshot](documentation/views/add_item_page_screenshot2.png)
 
 ---
 
@@ -153,10 +165,11 @@ iii. As an Existing User, I want to be able to login to my account and add, view
 ![WelcomePage Screenshot](documentation/views/welcome_page_screenshot1.png)
 ![welcomePage Screenshot](documentation/views/welcome_page_screenshot2.png)
     
-    b. When he clicks on the "Login" link, he is taken to the login form page where he can fill in his details as seen in the screenshot below: 
+    b. When he clicks on the "Login" link, he is taken to the login form page where he can fill in his details and if correct, he logs in successfully. See screenshot below: 
 
 ![LoginPage Screenshot](documentation/views/login_page_screenshot1.png)
 ![LoginPage Screenshot](documentation/views/login_page_screenshot2.png)
+![LoginSuccess Screenshot](documentation/views/login_success_message_display_screenshot.png)
 
 ---
 
@@ -202,9 +215,225 @@ vii. As an Existing User, I want to be able to retrieve and make changes on any 
 
     a. The first button beside each item on the home/viewing page is the "Edit item" button which the User needs for updating an item in the database as shown in the screenshot below: 
 
-![EditShoppingListButton Screenshot](documentation/views/edit_item_button_screenshot.png)
+![EditItemButton Screenshot](documentation/views/edit_item_button_screenshot.png)
     
     b. On clicking the "Edit item" button, the User is taken to the edit item's form page where the input fields are prepopulated with their current values in the database and waiting for the user to make changes to the relevant field(s). After making his desired changes, he clicks on the "Update item" button and the changes are made in the database and user is redirected back to the home page to view his shopping list in order to confirm that the changes has actually been made. See screenshot below:
 
-![EditShoppingListItem Screenshot](documentation/views/edit_item_page_screenshot1.png)
-![EditShoppingListItem Screenshot](documentation/views/edit_item_page_screenshot2.png)
+![EditItemPage Screenshot](documentation/views/edit_item_page_screenshot1.png)
+![EditItemPage Screenshot](documentation/views/edit_item_page_screenshot2.png)
+
+---
+
+viii. As an Existing User, I want to be able to remove a purchased item from the list to avoid the mistake of repurchasing it.
+
+    a. The second button beside each item on the home/viewing page is the "Delete item" button which the User needs for removing/deleting an item in the database as shown in the screenshot below: 
+
+![DeleteItemButton Screenshot](documentation/views/delete_item_button_screenshot.png)
+      
+    b. When he clicks on the "Delete item" button, another page that contains a confirmation message is displayed to the user and if he confirms with the "Delete item" button again, the item is removed from the database. See screenshot below:
+
+![DeleteItemMessage Screenshot](documentation/views/delete_item_message_confirm_screenshot.png)
+
+---
+
+ix. As an Existing User, I want to be able to delete my list and have a blank space to start a new list.
+
+    a. The User will find the "Delete List" button beside the "Add an item" button close to the footer section of the home page and if clicked, the entire shopping list is deleted outrightly and a blank page is displayed back to the user to show that his list has been deleted. See screenshot below: 
+
+![DeleteListButton Screenshot](documentation/views/delete_list_button_screenshot.png)
+
+---
+
+x. As an Existing User, I want to be able to enter my item's quantity and unit price and get the total price calculated and displayed automatically.
+
+    a. When the "Add an item" form page is displayed to the User, he enters the item name, unit price and quantity in the appropriate fields and when he moves the cursor into the input box for the total price field, it automatically gets populated with the total price for that particular item as seen in the screenshot below:
+
+![AutoCalculateTotalPrice Screenshot](documentation/views/auto_calc_total_price_add_item_page_screenshot.png) 
+
+    b. Similar process as "Add an item" also goes for the "Edit an item" operation. Find below the screenshot taken before the item was updated:
+
+![BeforeEditItemOperation Screenshot](documentation/views/before_edit_item_operation_page_screenshot.png) 
+    
+    c. When the User changes the values for both the "unit price" and "quantity", the total price is automatically calculated and its field populated with the right amount as seen in the screenshot below: 
+
+![AutoCalculateTotalPrice Screenshot](documentation/views/auto_calc_price_qty_change_edit_item_screenshot.png) 
+
+    d.  When the User changes the value for the "unit price" only, the total price is automatically calculated and its field populated with the right amount as seen in the screenshot below: 
+
+![AutoCalculateTotalPrice Screenshot](documentation/views/auto_calc_price_change_edit_item_screenshot.png) 
+
+    e. When the User changes the value for the "quantity" only, the total price is automatically calculated and its field populated with the right amount as seen in the screenshot below: 
+
+![AutoCalculateTotalPrice Screenshot](documentation/views/auto_calc_qty_change_edit_item_screenshot.png) 
+
+---
+
+### Automated Testing
+
+1. Python Testing
+
+
+
+
+
+
+
+2. JavaScript Testing
+
+---
+
+# Deployment
+
+* Firstly, visit Heroku website to sign up for a free account at https://heroku.com/ 
+
+* Create an account by clicking the "Sign Up" button and provide your details as required.
+
+* Heroku sends an activation link to the email you provided so open that email, click on the link and it will take you to the Heroku site. 
+
+* Enter your password and confirm it, then hit the "save" button.
+
+* Heroku then takes you to the dashboard where you can create your first app
+
+* To deploy this project to Heroku, there are four main stages involved which are:
+
+1. Create the Heroku app
+
+    * To create your first app, you can either click on the "Create new app" button located in the middle of the page or on the "New" button located on the top right corner of the page and select "Create new app" option from the drop down box. Then, give your app a name and choose the region/location nearest to you e.g Europe and click on the "Create app" button. 
+
+2. Attach the database
+
+    * To add a database, click on the "Resources" tab located at the top of the page. In the "Add-ons" section of the page, search for "postgres" using the search box provided and select "Heroku Postgres" to add it to your app. It then displays another popup box so click on the button provided and Heroku is added.
+
+3. Prepare our environment and settings.py file
+
+    * Now that the database is added, go back to "Settings" tab located at the top of the page and click on "Reveal Config Vars" button. This will provide the "DATABASE_URL" which is the connection to your Postgres database so copy the string in the box beside the "DATABASE_URL" box and store it somewhere as it will be added to your project later.
+
+    * Go back to your code and in the same directory as the "manage.py" file, create a file called "env.py" which will be used to store your secret environment variables" while in development because this variable must be hidden and should not be publicly visible.       Add your "env.py" file to the ".gitignore" file so that when you push your code to GitHub, the secret environment variables and secret keys will not be visible for everyone to see. 
+    
+    In the "env.py" file, import the os (operating system) library and use it to set a couple of environment variables which are:
+
+        i. Set "DATABASE_URL" and then paste in the URL copied from Heroku earlier i.e
+        os.environ["DATABASE_URL"] = "Paste in Heroku DATABASE_URL Link" 
+
+        ii. Add your secret key as this should not be visible on GitHub too. It will be made up by you and can comprise of whatever you like i.e
+        os.environ["SECRET_KEY"] = "Make up a randomSecretKey" 
+
+        iii. Save the file
+
+    * Copy the "SECRET_KEY" value above and add it to your "Config Vars" on Heroku so go back to Heroku dashboard, click on the "Settings" tab and under the "Config Vars" section, click on the "Reveal Config Vars" button once again. In the first pair of empty text box provided, type "SECRET_KEY" in one and its value copied earlier from "env.py" file into the other box i.e 
+    SECRET_KEY, “randomSecretKey”
+
+    * Click the "Add" button.
+
+    * Next, reference "env.py" file in the "settings.py" file and do a few imports so go back to "settings.py" file and at the top of the file and undrneath the first import (i.e from pathlib import Path), type the following to import them: 
+        import os
+        import dj_database_url
+        if os.path.isfile("env.py"):
+            import env
+
+    * In the "SECRET_KEY" section a little further down in the same file, remove the insecure secret key that is presently there and replace it with the new and secured "SECRET_KEY" i.e
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+
+    * Then, wire up your Postgres Database. In "settings.py" file, scroll down to the "DATABASES" section and replace (Comment out the old DataBases Section) the current DATABASES Section with a new one as shown below:
+        DATABASES = {
+        'default':
+        dj_database_url.parse(os.environ.get("DATABASE_
+        URL"))
+        }
+
+    * Save the file again and that's it! Heroku database is now being used as the backend.      
+
+4. Get our static and media files stored on Cloudinary
+
+    * Firstly, set up a Cloudinary account by following these steps: 
+        i.   Visit the Cloudinary website: https://cloudinary.com/
+        ii.  Click on the Sign Up For Free button
+        iii. Provide your name, email address and choose a password
+        iv.  For Primary interest, you can choose Programmable Media for image and video API
+        v.   Optional: edit your assigned cloud name to something more memorable
+        vi.  Click Create Account
+        vii. Verify your email and you will be brought to the dashboard
+
+    * Once account is cretaed, go over to the dashboard which contains the API authentication information and click on the "copy to clipboard" link next to "API environment variable", this will be used to connect your app to cloudinary.
+
+    * Go back to your IDE and in "env.py" file, add Cloudinary URL to env.py making sure to paste in the correct section of the link as shown below:
+    os.environ["CLOUDINARY_URL"] = "paste in the value copied earlier from Cloudinary dashboard here"  
+
+    * Copy the value of Cloudinary URL above, then go back to Heroku dashboard and under the "Settings" tab, click on the "Reveal Config Vars" button and add a new variable in the next available empty box giving it a name of "CLOUDINARY_URL" and paste in the value copied earlier from "env.py" into the box next to the "CLOUDINARY_URL" one. Be sure to paste in the correct section of the link.
+
+    * Add one more temporary environment variable called "DISABLE_COLLECTSTATIC" and set its value to 1. This is a temporary step for the moment, it's just to get your skeleton project deploying since there is no static files yet but this will be removed later before project deployment.
+
+    * Go back to your "settings.py" file and under the "INSTALLED_APPS" section,add the Cloudinary libraries installed earlier by typing 'cloudinary_storage' with a single quote around it. This needs to be typed in the following order  as order is very important here:
+        ...
+        'cloudinary_storage',
+        'django.contrib.staticfiles',
+        'cloudinary',
+        ...
+
+    * Save this file.
+
+    * Next, tell Django to use Cloudinary to store media and static files so down near the end of "settings.py" file, beneath the "STATIC_URL = '/static/'" code, add these few lines:
+        STATIC_URL = '/static/'
+        STATICFILES_STORAGE =
+        'cloudinary_storage.storage.StaticHashedCloudinaryS
+        torage'
+        STATICFILES_DIRS = [os.path.join(BASE_DIR,
+        'static')]
+        STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+        MEDIA_URL = '/media/'
+        DEFAULT_FILE_STORAGE =
+        'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+    * Link file to the templates directory in Heroku i.e tell Django where your template will be stored so at the top of "settings.py" file and under the "BASE_DIR" directory/line, add:
+        TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+    * Scroll down midway in the "settings.py" file and change the "templates" directory to "TEMPLATES_DIR" i.e change the "DIRS" key inside the TEMPLATES  to point towards the new templates directory variable which is "TEMPLATES_DIR" i.e
+    'DIRS': [TEMPLATES_DIR]
+
+    * Add your Heroku Hostname to "ALLOWED_HOSTS" in the "settings.py" file which comprises of your Heroku app name followed by ".herokuapp.com", separate them with a comma and add beside it 'localhost'. The 'localhost' added will enable you run your app locally too i.e
+    ALLOWED_HOSTS = ["PROJ_NAME.herokuapp.com", "localhost"]
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+View the live project [here](https://shoppinglist-planner.herokuapp.com/)
+
+
+View the GitHub Repository [here](https://github.com/Eb0nY-April14/DjangoShoppingList)
+
+
+
+
+
+* Credits
+
+
+
+
+
+
+
+
+
+
+
+
+* Acknowledgements
+
