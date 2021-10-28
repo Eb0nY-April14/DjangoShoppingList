@@ -17,9 +17,9 @@
                     <th>Total Price</th>
                     <th>Date Created</th>
                     <th>Date Updated</th>
-                </tr> 
+                </tr>
+
                 {% for shoppinglistitem in shoppinglistitems %}
-        <!-- This will render in a table format the values of the 'shoppinglistitems' keys created within our 'context' variable in views.py -->
                 <tr class="size-sm">
                 {% if shoppinglistitem.done_status %} 
                     <td><strike>{{ shoppinglistitem.item_name }}</strike></td> 
@@ -37,43 +37,34 @@
                     <td>{{ shoppinglistitem.date_updated }}</td> 
                 {% endif %} 
                 </tr>
-            <!-- </table> -->
-            <!-- <div class="col-sm-3 col-lg-1"> -->
-                <!-- <h5>Edit Button</h5> -->
-                        <tr> 
-                            <div>
-                                <!-- <tr> -->
-                                    <td>
-                                        <a href="/edit/{{ shoppinglistitem.id }}" class="spacing">
-                                            <button class="size-sm btn btn-primary btn-md">Edit item</button>
-                                        </a>    
-                                    </td>
-                            </div>
-            <!-- </div> -->
-            <!-- <div class="col-sm-3 col-lg-1"> -->
-                <!-- <h5>Delete Button</h5> -->
-                            <div>  <!--class="col-sm-4"-->
-                                <td>
-                                    <a href="{% url 'shoppinglistitem-delete' shoppinglistitem.id  %}" class="spacing">
-                                        <button class="size-sm btn btn-danger btn-md">Delete item</button>
-                                    </a>    
-                                </td>
-                            </div>
-            <!-- </div> -->
-            <!-- <div class="col-sm-3 col-lg-1"> -->
-                <!-- <h5>Bought?</h5> -->
-                            <div>
-                                <td>
-                                    <a href="/bought/{{ shoppinglistitem.id }}" class="spacing">
-                                        <button class="size-sm btn btn-primary btn-md">Bought item</button>
-                                    </a>    
-                                </td> 
-                            </div>
-            <!-- </div> -->
-                        </tr>
-            {% empty %}
-                <tr><td>Sorry!!! You currently have no items in your shopping list.</td></tr>
-        {% endfor %}
+                <tr> 
+                    <div>
+                        <td>
+                            <a href="/edit/{{ shoppinglistitem.id }}" class="spacing">
+                                <button class="size-sm btn btn-primary btn-md">Edit item</button>
+                            </a>    
+                        </td>
+                    </div>
+            
+                    <div>  
+                        <td>
+                            <a href="{% url 'shoppinglistitem-delete' shoppinglistitem.id  %}" class="spacing">
+                                <button class="size-sm btn btn-danger btn-md">Delete item</button>
+                            </a>    
+                        </td>
+                    </div>
+            
+                    <div>
+                        <td>
+                            <a href="/bought/{{ shoppinglistitem.id }}" class="spacing">
+                                <button class="size-sm btn btn-primary btn-md">Bought item</button>
+                            </a>    
+                        </td> 
+                    </div>
+                </tr>
+                {% empty %}
+                    <tr><td>Sorry!!! You currently have no items in your shopping list.</td></tr>
+                {% endfor %}
             </table>
         </div> <!-- table-responsive class ends -->
 
