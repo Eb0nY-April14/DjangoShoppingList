@@ -424,6 +424,13 @@ View the GitHub Repository [here](https://github.com/Eb0nY-April14/DjangoShoppin
 
 * Credits
 
+        Online Resources Used:
+    * Bootstrap Creative website at https://bootstrapcreative.com/can-adjust-text-size-bootstrap-responsive-design/
+
+    * YouTube video on Bootstrap 4 Grid System at https://www.youtube.com/watch?v=tX_4HTQ6Pgc&t=6s
+
+    * Tutorial on Getting started with Django Unit Testing at https://www.section.io/engineering-education/django-unit-testing/
+
 
 
 
