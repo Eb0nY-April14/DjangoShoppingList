@@ -11,16 +11,6 @@
     float: left;
   }
 
-  body {
-    padding: 0;
-    margin: 0;
-    /* bootstrap set the font-family & size to 1rem 
-    & I'm not able to override them with my own css */
-    font-family: 'Lato', sans-serif;
-    /* font-size: 2rem; */
-    /* background: #f7f7f4; */
-  }
-
   .navbar {
     background: #6ab446;
   }
@@ -43,11 +33,22 @@
     justify-content: flex-end;
   }
 
-  .button-space {
-    position: relative;
-    margin: 50px;  
-    /* text-align: center;  */
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
   }
+
+  table {
+    table-layout: fixed;
+    overflow: hidden;
+}
+
+  /* .button-space {
+    position: relative; 
+    margin: 50px;  
+    text-align: center;   
+  } */
 
   .form-center {
     margin-left: 50px;
@@ -92,19 +93,45 @@
   /*      SIZES FOR 4 BREAKPOINTS IN BOOTSTRAP            */
   /********************************************************/
 
-  @media (min-width: 230px) {  
+  @media (max-width: 540px) {  
+    .bttn-spacing {
+      margin-bottom: 15px;
+      margin-top: 20px;
+    } 
+
+    a.spacing {
+      margin-left: 40px;
+      margin-right: 20px;
+    }
+  }
+  
+  @media (max-width: 414px) {  
+    tr.size-sm, a > button.size-sm  {
+      font-size: 0.8rem;
+    } 
+  }
+
+  @media (max-width: 320px) {  
+    tr.size-sm {
+      font-size: 0.6rem;
+    } 
+  }
+
+
+
+  /* @media (min-width: 230px) {  
     h2 {font-size:1.5rem;} 
   }
 
-/* Small devices (landscape phones, 544px and up) */
+ Small devices (landscape phones, 544px and up) 
 @media (min-width: 544px) {  
-  p {font-size:1.5rem;} /*1rem = 16px*/
+  p {font-size:1.5rem;} 1rem = 16px
 }
 
-/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+ Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint 
 @media (min-width: 768px) {  
   p {font-size:1.5rem;} 
-}
+} */
 
 /* Large devices (desktops, 992px and up) */
 /* @media (min-width: 992px) { 
