@@ -55,8 +55,15 @@
   }
 
   .heading {
-    margin-top: 100px;
-    margin-bottom: 80px;
+    margin: 100px 0 80px 0;
+    /* margin-top: 100px;
+    margin-bottom: 80px; */
+  }
+
+  .bttn-spacing {
+    margin: 30px 0 40px 0;
+    /* margin-top: 30px;
+    margin-bottom: 40px; */
   }
 
   .fab {
@@ -95,13 +102,15 @@
 
   @media (max-width: 540px) {  
     .bttn-spacing {
-      margin-bottom: 15px;
-      margin-top: 20px;
+      margin: 20px 0 15px 0;
+      /* margin-bottom: 15px;
+      margin-top: 20px; */
     } 
 
     a.spacing {
-      margin-left: 40px;
-      margin-right: 20px;
+      margin: 0 20px 0 40px;
+      /* margin-left: 40px;
+      margin-right: 20px; */
     }
   }
   
