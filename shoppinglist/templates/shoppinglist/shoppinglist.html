@@ -8,110 +8,85 @@
     
     <hr>
         <h2 class="headerspace text-center font-weight-bold">View items in your shopping list:</h2>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12 col-lg-2"><h5 class="font-weight-bold">Item Name</h5></div>
-            <div class="col-sm-12 col-lg-1"><h5 class="font-weight-bold">Quantity</h5></div>
-            <div class="col-sm-12 col-lg-1"><h5 class="font-weight-bold">Unit Price</h5></div>
-            <div class="col-sm-12 col-lg-1"><h5 class="font-weight-bold">Total Price</h5></div>
-            <div class="col-sm-12 col-lg-2"><h5 class="font-weight-bold">Date Created</h5></div>
-            <div class="col-sm-12 col-lg-2"><h5 class="font-weight-bold">Date Updated</h5></div>
-            <div class="col-sm-12 col-lg-1"><h5 class="font-weight-bold">Edit Button</h5></div>
-            <div class="col-sm-12 col-lg-1"><h5 class="font-weight-bold">Delete Button</h5></div>
-            <div class="col-sm-12 col-lg-1"><h5 class="font-weight-bold">Bought?</h5></div> 
-
-            {% for shoppinglistitem in shoppinglistitems %}
-            {% if shoppinglistitem.done_status %} 
-            
-                <div class="col-sm-12 col-lg-2">
-                    <!-- <h6>Item Name</h6> -->
-                    <p><strike>{{ shoppinglistitem.item_name }}</strike></p> 
-                </div>
-                <div class="col-sm-12 col-lg-1">
-                    <!-- <h6>Quantity</h6> -->
-                    <p><strike>{{ shoppinglistitem.quantity }}</strike></p> 
-                </div>
-                <div class="col-sm-12 col-lg-1">
-                    <!-- <h6>Unit Price</h6> -->
-                    <p><strike>{{ shoppinglistitem.unit_price }}</strike></p>
-                </div>
-                <div class="col-sm-12 col-lg-1">
-                    <!-- <h6>Total Price</h6> -->
-                    <p><strike>{{ shoppinglistitem.total_price }}</strike></p>
-                </div>
-                <div class="col-sm-12 col-lg-2">
-                    <!-- <h6>Date Created</h6> -->
-                    <p><strike>{{ shoppinglistitem.date_created }}</strike></p> 
-                </div>
-                <div class="col-sm-12 col-lg-2">
-                    <!-- <h6>Date Updated</h6> -->
-                    <p><strike>{{ shoppinglistitem.date_updated }}</strike></p> 
-                </div>
-            
-            {% else %}
-                <div class="col-sm-12 col-lg-2">
-                    <!-- <h6>Item Name</h6> -->
-                    <p>{{ shoppinglistitem.item_name }}</p> 
-                </div>
-                <div class="col-sm-12 col-lg-1">
-                    <!-- <h6>Quantity</h6> -->
-                    <p>{{ shoppinglistitem.quantity }}</p> 
-                </div>
-                <div class="col-sm-12 col-lg-1">
-                    <!-- <h6>Unit Price</h6> -->
-                    <p>{{ shoppinglistitem.unit_price }}</p>
-                </div>
-                <div class="col-sm-12 col-lg-1">
-                    <!-- <h6>Total Price</h6> -->
-                    <p>{{ shoppinglistitem.total_price }}</p>
-                </div>
-                <div class="col-sm-12 col-lg-2">
-                    <!-- <h6>Date Created</h6> -->
-                    <p>{{ shoppinglistitem.date_created }}</p> 
-                </div>
-                <div class="col-sm-12 col-lg-2">
-                    <!-- <h6>Date Updated</h6> -->
-                    <p>{{ shoppinglistitem.date_updated }}</p> 
-                </div>
-            
-            {% endif %}
-            
-            <div class="col-sm-3 col-lg-1">
+        <div class="table-responsive"> <!-- table-responsive class starts -->
+            <table class="table">
+                <tr class="size-sm">
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
+                    <th>Date Created</th>
+                    <th>Date Updated</th>
+                </tr> 
+                {% for shoppinglistitem in shoppinglistitems %}
+        <!-- This will render in a table format the values of the 'shoppinglistitems' keys created within our 'context' variable in views.py -->
+                <tr class="size-sm">
+                {% if shoppinglistitem.done_status %} 
+                    <td><strike>{{ shoppinglistitem.item_name }}</strike></td> 
+                    <td><strike>{{ shoppinglistitem.quantity }}</strike></td> 
+                    <td><strike>{{ shoppinglistitem.unit_price }}</strike></td> 
+                    <td><strike>{{ shoppinglistitem.total_price }}</strike></td> 
+                    <td><strike>{{ shoppinglistitem.date_created }}</strike></td> 
+                    <td><strike>{{ shoppinglistitem.date_updated }}</strike></td> 
+                {% else %}
+                    <td>{{ shoppinglistitem.item_name }}</td> 
+                    <td>{{ shoppinglistitem.quantity }}</td> 
+                    <td>{{ shoppinglistitem.unit_price }}</td> 
+                    <td>{{ shoppinglistitem.total_price }}</td> 
+                    <td>{{ shoppinglistitem.date_created }}</td> 
+                    <td>{{ shoppinglistitem.date_updated }}</td> 
+                {% endif %} 
+                </tr>
+            <!-- </table> -->
+            <!-- <div class="col-sm-3 col-lg-1"> -->
                 <!-- <h5>Edit Button</h5> -->
-                <p>
-                    <a href="/edit/{{ shoppinglistitem.id }}">
-                        <button class="btn btn-primary">Edit item</button>
-                    </a>    
-                </p>
-            </div>
-            <div class="col-sm-3 col-lg-1">
+                        <tr> 
+                            <div>
+                                <!-- <tr> -->
+                                    <td>
+                                        <a href="/edit/{{ shoppinglistitem.id }}" class="spacing">
+                                            <button class="size-sm btn btn-primary btn-md">Edit item</button>
+                                        </a>    
+                                    </td>
+                            </div>
+            <!-- </div> -->
+            <!-- <div class="col-sm-3 col-lg-1"> -->
                 <!-- <h5>Delete Button</h5> -->
-                <p>
-                    <a href="{% url 'shoppinglistitem-delete' shoppinglistitem.id  %}">
-                        <button class="btn btn-danger">Delete item</button>
-                    </a>    
-                </p>
-            </div>
-            <div class="col-sm-3 col-lg-1">
+                            <div>  <!--class="col-sm-4"-->
+                                <td>
+                                    <a href="{% url 'shoppinglistitem-delete' shoppinglistitem.id  %}" class="spacing">
+                                        <button class="size-sm btn btn-danger btn-md">Delete item</button>
+                                    </a>    
+                                </td>
+                            </div>
+            <!-- </div> -->
+            <!-- <div class="col-sm-3 col-lg-1"> -->
                 <!-- <h5>Bought?</h5> -->
-                <p>
-                    <a href="/bought/{{ shoppinglistitem.id }}">
-                        <button class="btn btn-primary">Bought item</button>
-                    </a>    
-                </p> 
-            </div>
-        
+                            <div>
+                                <td>
+                                    <a href="/bought/{{ shoppinglistitem.id }}" class="spacing">
+                                        <button class="size-sm btn btn-primary btn-md">Bought item</button>
+                                    </a>    
+                                </td> 
+                            </div>
+            <!-- </div> -->
+                        </tr>
             {% empty %}
-                <p>Sorry!!! You currently have no items in your shopping list.</p>
+                <tr><td>Sorry!!! You currently have no items in your shopping list.</td></tr>
         {% endfor %}
+            </table>
+        </div> <!-- table-responsive class ends -->
 
-            <div> <!--class="text-center"-->
-                <a href="{% url 'add_item' %}"><button class="btn btn-primary btn-lg button-space">Add an item</button></a>
-                <a href="{% url 'delete_list' %}"><button class="btn btn-danger btn-lg button-space">Delete List</button></a>
+    <div class="container">
+        <div class="row">
+            <div class="bttn-spacing col-sm-12 col-md-6 text-center"> 
+                <a href="{% url 'add_item' %}"><button class="btn btn-primary btn-md">Add item</button></a>
             </div>
-        </div> <!-- row div ends -->
-    </div> <!-- container div ends -->
+            <div class="bttn-spacing col-sm-12 col-md-6 text-center">
+                <a href="{% url 'delete_list' %}"><button class="btn btn-danger btn-md">Delete List</button></a>
+            </div>
+        </div>  <!--row div ends-->
+    </div>  <!--container div ends-->
 
     {% else %} <!-- If user is not authenticated -->
         <div class="container"> 
