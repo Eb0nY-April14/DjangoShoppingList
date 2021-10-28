@@ -133,7 +133,9 @@ PEP8 online validation tool was used to validate the code to ensure there were n
 ![PEP8 Testing](documentation/************.png)
 
 
-### Manual Testing: Testing User Stories from User Experience (UX) Section
+### Manual Testing of shoppinglist|planner app Functionalities 
+
+* Testing User Stories from User Experience (UX) Section
 
 i. As an Existing User who is logged in, I want to be able to view my shopping list and see what items I have purchased and the ones left. 
 
@@ -268,17 +270,18 @@ x. As an Existing User, I want to be able to enter my item's quantity and unit p
 
 ---
 
-### Automated Testing
+### Manual Testing of JavaScript function that calculates the total price of an item. 
 
-1. Python Testing
+When a user adds a new item or edits one, this function calculates the total price automatically and populates the "total_price" field with the result. The screenshots below are the add item and edit item templates and the calculated & prepopulated value of total price showing that it is calculated correctly. 
 
+    i. add item Page:
+![Screenshot of Calculate TotalPrice on add_item Page](documentation/views/add_item_calc_total_price_screenshot.png)
 
+    ii. edit item Page before the edit operation:
+![Screenshot of Calculate TotalPrice on edit_item Page](documentation/views/before_edit_item_calc_total_price_screenshot.png)
 
-
-
-
-
-2. JavaScript Testing
+    iii. edit item Page after the edit operation:
+![Screenshot of Calculate TotalPrice on edit_item Page](documentation/views/after_edit_item_calc_total_price_screenshot.png)
 
 ---
 
@@ -429,18 +432,12 @@ View the GitHub Repository [here](https://github.com/Eb0nY-April14/DjangoShoppin
 
     * YouTube video on Bootstrap 4 Grid System at https://www.youtube.com/watch?v=tX_4HTQ6Pgc&t=6s
 
-    * Tutorial on Getting started with Django Unit Testing at https://www.section.io/engineering-education/django-unit-testing/
-
-
-
-
-
-
-
-
-
-
-
 
 * Acknowledgements
+
+    * My mentor Tim Nelson for his immense help, continuous guidance and feedback.
+
+    * Cohort Facilitator Kasia for her continuous help and support.
+
+    * Stack Overflow website for helpful resources especially on issues encountered with cloudinary and other django errors.
 
