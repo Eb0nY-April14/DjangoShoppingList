@@ -1,8 +1,4 @@
 .relative {
-    /*position: relative;*/
-    /*left: 5px;*/
-    /*right: 5px;*/
-    /*border: 3px solid #73AD21;*/
     border-radius: 6px;
     width: 5%;
   }
@@ -56,21 +52,13 @@
 
   .heading {
     margin: 100px 0 80px 0;
-    /* margin-top: 100px;
-    margin-bottom: 80px; */
   }
 
   .bttn-spacing {
     margin: 30px 0 40px 0;
-    /* margin-top: 30px;
-    margin-bottom: 40px; */
   }
 
   .fab {
-    /*padding: 20px;
-    font-size: 30px;
-    width: 15px; */
-    /*padding: 10px;*/
     font-size: 30px;
     text-decoration: none;
   }
@@ -103,14 +91,10 @@
   @media (max-width: 540px) {  
     .bttn-spacing {
       margin: 20px 0 15px 0;
-      /* margin-bottom: 15px;
-      margin-top: 20px; */
     } 
 
     a.spacing {
       margin: 0 20px 0 40px;
-      /* margin-left: 40px;
-      margin-right: 20px; */
     }
   }
   
