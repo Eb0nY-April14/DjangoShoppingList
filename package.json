@@ -4,7 +4,7 @@
   "description": "![Shopping List Image](static/images/shopping_list_image.jpg)",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --env=jsdom"        
   },
   "repository": {
     "type": "git",

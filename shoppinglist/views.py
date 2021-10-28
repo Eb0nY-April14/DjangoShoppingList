@@ -1,15 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import DeleteView, FormView
-from .forms import ItemForm
+from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.contrib import messages
-
-from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
-# from django_shoppinglist import helpers
 from django.contrib import auth
-
+from .forms import ItemForm
 from .models import ShoppingListItem
 
 
@@ -48,17 +45,6 @@ def logout(request):
     return render(request, template_name)
 
 
-#     url(r'^accounts/logout/$',
-#     auth_views.logout,
-#     {'template_name': 'blog/logout.html'},
-#     name='logout'
-# )
-
-#     return reverse_lazy('login.html')
-#     # return render(request, 'shoppinglist/logout.html')
-
-
-# Create your views here.
 def get_shopping_list(request):
     shoppinglistitems = ShoppingListItem.objects.filter(user=request.user.id)
     context = {
@@ -67,8 +53,8 @@ def get_shopping_list(request):
     return render(request, 'shoppinglist/shoppinglist.html', context)
 
 
-# This function based view will allow a user to add a new item to his list
-# & display his full list back
+# This function based view will allow a user to add 
+# a new item to his list & display his full list back
 def add_item(request):
     if request.method == "POST":
         form = ItemForm(request.POST)

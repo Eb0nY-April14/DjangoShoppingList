@@ -14,13 +14,13 @@ class ModelTest(TestCase):
         self.shoppinglistitem.total_price = 5.96
         self.shoppinglistitem.save()
 
+# Test all fields in models.py to ascertain it works as expected
     def test_fields(self):
         shoppinglistitem = ShoppingListItem()
         shoppinglistitem.item_name = "Toothpaste"
         shoppinglistitem.unit_price = 1.49
         shoppinglistitem.quantity = 4
         shoppinglistitem.total_price = 5.96
-        # shoppinglistitem.done_status = False
         shoppinglistitem.save()
 
         record = ShoppingListItem.objects.get(pk=shoppinglistitem.id)
@@ -31,6 +31,3 @@ class ModelTest(TestCase):
         self.assertEqual(self.shoppinglistitem.done_status, False)
         self.shoppinglistitem.done_status = True
         self.assertEqual(self.shoppinglistitem.done_status, True)
-
-    # def test_calculate_total_price(self):
-    #     totalprice = unit_price * quantity
