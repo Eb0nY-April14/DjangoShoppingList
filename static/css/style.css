@@ -7,6 +7,15 @@
     float: left;
   }
 
+  img.relative {  
+    max-width: 100%;  
+    height: auto;
+  }  
+
+  li.greeting {
+    color: #fff;
+  }
+
   .navbar {
     background: #6ab446;
   }

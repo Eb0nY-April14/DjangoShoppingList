@@ -1,10 +1,10 @@
 {% extends 'shoppinglist/base.html' %}
 
+{% block title %} Edit Shopping List Item {% endblock %}
+
 {% load static %}
 
 {% block content %}
-
-    <title>Edit Shopping List Item</title>
 
     {% if user.is_authenticated %}
         <h2 class="text-center heading">Edit an item in your shopping list:</h2>

@@ -1,34 +1,39 @@
 {% extends 'shoppinglist/base.html' %}
 
+{% block title %} Add Shopping List Item {% endblock %}
+
 {% load static %}
 
 {% block content %}
 
-    <title>Add Shopping List Item</title>
-
     {% if user.is_authenticated %}
-        <h2 class="heading text-center">Add an item to your shopping list:</h2>
+        <h2 class="heading text-center">Add an item to your shopping list: </h2>
         <form class="button-space text-center" method="POST" action="add">
-            {% csrf_token %}
-            {{ form.as_p }}
+        {% csrf_token %}
+        {{ form.as_p }}
 
-            <button class="btn btn-primary btn-lg button-space" type="submit">Add Item</button>
+            <button class="btn btn-primary btn-lg button-space" type="submit">
+                Add Item
+            </button>
         </form>
-        
+
     {% else %} <!-- If user is not authenticated -->
     <div class="container">
-        <div class="row"> 
+        <div class="row">
             <p class="heading para-size">
-                Sorry! You cannot add items to your shopping list because you are not currently 
-                logged in. Please <a href="{% url 'login' %}">log in</a> if you already have an account or 
-                <a href="{% url 'register' %}">sign up</a> if you don't have one.
+                Sorry! You cannot add items to your shopping list  
+                because you are not currently logged in. Please 
+                <a href="{% url 'login' %}">log in</a> 
+                if you already have an account or
+                <a href="{% url 'register' %}">sign up</a> 
+                if you don't have one.
             </p>
-        </div> 
-    </div>        
+        </div>
+    </div>
     {% endif %} <!-- authentication end if -->
 
-    
-    
+
+
 {% endblock %}
 
 <!-- load additional javascript -->

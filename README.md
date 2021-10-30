@@ -27,7 +27,6 @@ The features provided by the ShoppingList|Planner app are as follows:
   order to be able to perform any action on his shoppinglist.
 * Logout: A user can log out of his account to secure his shopping list
 
-
 ---
 
 User Experience (UX)
@@ -55,6 +54,10 @@ User Experience (UX)
         i) As an Existing User, I want to be able to delete my list and have a blank space to start a new list.
         
         j) As an Existing User, I want to be able to enter my item's quantity and unit price and get the total price calculated and displayed automatically.
+
+Agile Approach Used
+
+* I used a kanban board on GitHub as the agile planning tool for my Django app. A project was created in GitHub with issues and milestones set. I also used the MoSCoW labelling technique to prioritise my user stories into Must-Have, Should-Have, Could-Have and Won't-Have. At the start, I put all my user stories in the "To do" section of the board, then I moved the 3 Must-Haves into the "In progress" section and once I finished working on a functionality and everything responds as I want, I then move it to the "Done" section.
         
 # Database Schema
 
@@ -431,6 +434,8 @@ View the GitHub Repository [here](https://github.com/Eb0nY-April14/DjangoShoppin
     * Bootstrap Creative website at https://bootstrapcreative.com/can-adjust-text-size-bootstrap-responsive-design/
 
     * YouTube video on Bootstrap 4 Grid System at https://www.youtube.com/watch?v=tX_4HTQ6Pgc&t=6s
+
+    * Tutorial on How to change image size in CSS? at https://www.javatpoint.com/oprweb/test.jsp?filename=how-to-change-image-size-in-css1
 
 
 * Acknowledgements

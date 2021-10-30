@@ -1,8 +1,8 @@
 {% extends 'shoppinglist/base.html' %}
 
-{% block content %}
+{% block title %} Sign Up Page {% endblock %}
 
-<title>Sign Up Page</title>
+{% block content %}
 
 <h1 class="text-center heading">Sign Up</h1>
 
@@ -10,7 +10,7 @@
     <div class="row"> 
         <form class="form-center col" method="POST">  
             {% csrf_token %}
-            {{form.as_p}}
+            {{ form.as_p }}
             <button class="btn btn-success btn-lg text-center button-space">Sign Up</button>
         </form>
     </div>
@@ -18,6 +18,3 @@
 <p class="text-center">Already have an account? <a href="/login">Login</a> here</p>
 
 {% endblock content %}
-
-
-

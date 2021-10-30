@@ -1,8 +1,8 @@
 {% extends 'shoppinglist/base.html' %}
 
-{% block content %}
+{% block title %} Home Page {% endblock %}
 
-<title>Home Page</title>
+{% block content %}
 
     {% if user.is_authenticated %}
     
@@ -19,8 +19,8 @@
                     <th>Date Updated</th>
                 </tr>
 
-                {% for shoppinglistitem in shoppinglistitems %}
                 <tr class="size-sm">
+                {% for shoppinglistitem in shoppinglistitems %}
                 {% if shoppinglistitem.done_status %} 
                     <td><strike>{{ shoppinglistitem.item_name }}</strike></td> 
                     <td><strike>{{ shoppinglistitem.quantity }}</strike></td> 
@@ -38,29 +38,29 @@
                 {% endif %} 
                 </tr>
                 <tr> 
-                    <div>
+                    <!-- <div> -->
                         <td>
                             <a href="/edit/{{ shoppinglistitem.id }}" class="spacing">
                                 <button class="size-sm btn btn-primary btn-md">Edit item</button>
                             </a>    
                         </td>
-                    </div>
+                    <!-- </div> -->
             
-                    <div>  
+                    <!-- <div>   -->
                         <td>
                             <a href="{% url 'shoppinglistitem-delete' shoppinglistitem.id  %}" class="spacing">
                                 <button class="size-sm btn btn-danger btn-md">Delete item</button>
                             </a>    
                         </td>
-                    </div>
+                    <!-- </div> -->
             
-                    <div>
+                    <!-- <div> -->
                         <td>
                             <a href="/bought/{{ shoppinglistitem.id }}" class="spacing">
                                 <button class="size-sm btn btn-primary btn-md">Bought item</button>
                             </a>    
                         </td> 
-                    </div>
+                    <!-- </div> -->
                 </tr>
                 {% empty %}
                     <tr><td>Sorry!!! You currently have no items in your shopping list.</td></tr>
