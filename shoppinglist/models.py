@@ -20,6 +20,5 @@ class ShoppingListItem(models.Model):
         # beneath the list & newly added ones on top
         ordering = ['done_status']
 
-
     def __str__(self):
         return self.item_name
