@@ -53,7 +53,7 @@ def get_shopping_list(request):
     return render(request, 'shoppinglist/shoppinglist.html', context)
 
 
-# This function based view will allow a user to add 
+# This function based view will allow a user to add
 # a new item to his list & display his full list back
 def add_item(request):
     if request.method == "POST":
@@ -68,7 +68,7 @@ def add_item(request):
     context = {
         'form': form
     }
-    # This will return the html page on the next line to the user
+    # This will return the addshoppingitem page to the user
     return render(request, 'shoppinglist/add_shopping_item.html', context)
 
 

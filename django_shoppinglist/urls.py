@@ -15,26 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# We must add every class or function based views we create in views.py
-# file to the line after this comment but we've summed them all up there
-# cos it's getting too long
 from shoppinglist import views
 from shoppinglist.views import DeleteView, CustomLoginView, RegisterView
 from django.contrib.auth.views import LogoutView
 
 
-# We must add into this list the url path for every def function or class
-# we create in views.py file
 urlpatterns = [
     path('login/', CustomLoginView.as_view(), name='login'),
     path('logout/', views.logout, name='logout'),
     path('register/', RegisterView.as_view(), name='register'),
-    # path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('admin/', admin.site.urls),
     path('', views.get_shopping_list, name='get_shopping_list'),
     path('add', views.add_item, name='add_item'),
     path('edit/<item_id>', views.edit_item, name='edit_item'),
-    path('shoppinglistitem-delete/<int:pk>/', DeleteView.as_view(), name='shoppinglistitem-delete'),
+    path(
+        'shoppinglistitem-delete/<int:pk>/',
+        DeleteView.as_view(),
+        name='shoppinglistitem-delete'
+        ),
     path('delete_list', views.delete_list, name='delete_list'),
     path('bought/<item_id>', views.bought_item, name='bought_item'),
 ]

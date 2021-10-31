@@ -131,52 +131,74 @@ The database schema for the ShoppingListItem Model is used to show the relations
 
 ## Testing
 
-PEP8 online validation tool was used to validate my .py files to ensure there were no syntax errors or improper code indentation. It passed the test as seen in the screenshot below:
+PEP8 online validator
 
-* urls.py view:
-![PEP8 Testing](documentation/************.png)
+This tool was used to validate my .py files to ensure there are no syntax errors or improper code indentation. They passed the test as seen in the screenshots below:
 
-* models.py view:
-![PEP8 Testing](documentation/************.png)
+* urls.py:
+![PEP8 Validator Testing](documentation/validation/pep8_validation/urls.py_pep8_validator.png)
 
-* views.py view:
-![PEP8 Testing](documentation/************.png)
+* models.py:
+![PEP8 Validator Testing](documentation/validation/pep8_validation/models.py_pep8_validator.png)
 
-w3html validator was used to validate all my html templates and I got warning on 6 pages while the 7th page showed a warning & 3 errors. The html validator showed errors regarding the sign up page in which I used the Django built in form i.e {{ form.as_p }}. Here below are the screenshots of the 6 error free templates and the last one with errors:
+* views.py:
+![PEP8 Validator Testing](documentation/validation/pep8_validation/views.py_pep8_validator.png)
+
+* apps.py:
+![PEP8 Validator Testing](documentation/validation/pep8_validation/apps.py_pep8_validator.png)
+
+* forms.py:
+![PEP8 Validator Testing](documentation/validation/pep8_validation/forms.py_pep8_validator.png)
+
+* tests.py:
+![PEP8 Validator Testing](documentation/validation/pep8_validation/tests.py_pep8_validator.png)
+
+w3html validator 
+
+This tool was used to validate all my html templates and I got warning on 6 pages while the 7th page showed a warning & 3 errors. The html validator showed errors regarding the sign up page in which I used the Django built in form i.e {{ form.as_p }}. Here below are the screenshots of the 6 error free templates and the last one with errors:
 
 * Add item Page:
 
-![add item page](documentation/validation/html_validator_add_item_page.png)
+![add item page](documentation/validation/w3html_validation/html_validator_add_item_page.png)
 
 * Home/View list Page:
 
-![home/view page](documentation/validation/html_validator_home-view_page.png)
+![home/view page](documentation/validation/w3html_validation/html_validator_home-view_page.png)
 
 * Edit item Page:
 
-![edit item page](documentation/validation/html_validator_edit_item_page.png)
+![edit item page](documentation/validation/w3html_validation/html_validator_edit_item_page.png)
 
 * Delete item Page:
 
-![delete item page](documentation/validation/html_validator_delete_item_page.png)
+![delete item page](documentation/validation/w3html_validation/html_validator_delete_item_page.png)
 
 * Login Page:
 
-![login page](documentation/validation/html_validator_login_page.png)
+![login page](documentation/validation/w3html_validation/html_validator_login_page.png)
 
 * Logout Page:
 
-![logout page](documentation/validation/html_validator_logout_page.png)
+![logout page](documentation/validation/w3html_validation/html_validator_logout_page.png)
 
 * Register/Sign Up Page:
 
     * There were some errors found in the register page that has to do with the Django built in form template used. Since we were told not to reinvent the wheel but just customise Django's built in pages that already exists and are tested, I did so by using the {{ form.as_p }} but the html validator is complaining about it and this is beyond my control to fix so that's the reason why I'm leaving the errors in as seen in the screenshots below:
 
-![register/signup page](documentation/validation/html_validator_error_screenshot_for_register_page.png)
+![register/signup page](documentation/validation/w3html_validation/html_validator_error_screenshot_for_register_page.png)
 
-![register.html code screenshot from gitpod workspace](documentation/validation/form_section_gitpod_workspace_for_register_page.png)
+![register.html code screenshot from gitpod workspace](documentation/validation/w3html_validation/form_section_gitpod_workspace_for_register_page.png)
 
-![register page code screenshot from heroku page source](documentation/validation/form_section_view_page_source_for_register_page.png)
+![register page code screenshot from heroku page source](documentation/validation/w3html_validation/form_section_view_page_source_for_register_page.png)
+
+w3CSS validator
+
+This tool was used to validate my custom css code and it passed successfully. See screenshot below:
+
+* Custom CSS (style.css):
+
+![custom css validation](documentation/validation/w3css_validation/shoppinglist_app_custom_css_validator_result.png)
+
 
 ### Manual Testing of shoppinglist|planner app Functionalities 
 
@@ -473,11 +495,11 @@ View the GitHub Repository [here](https://github.com/Eb0nY-April14/DjangoShoppin
 * Credits
 
         Online Resources Used:
-    * Tutorial on Bootstrap Creative website at ![click here](https://bootstrapcreative.com/can-adjust-text-size-bootstrap-responsive-design/)
+    * Tutorial on Bootstrap Creative website at https://bootstrapcreative.com/can-adjust-text-size-bootstrap-responsive-design/
 
-    * YouTube video on Bootstrap 4 Grid System at ![click here](https://www.youtube.com/watch?v=tX_4HTQ6Pgc&t=6s)
+    * YouTube video on Bootstrap 4 Grid System at https://www.youtube.com/watch?v=tX_4HTQ6Pgc&t=6s
 
-    * Tutorial on How to change image size in CSS? at ![click here](https://www.javatpoint.com/oprweb/test.jsp?filename=how-to-change-image-size-in-css1)
+    * Tutorial on How to change image size in CSS? at https://www.javatpoint.com/oprweb/test.jsp?filename=how-to-change-image-size-in-css1
 
 
 * Acknowledgements
