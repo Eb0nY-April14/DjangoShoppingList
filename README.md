@@ -1,4 +1,4 @@
-![Shopping List Image](static/images/shopping_list_image.jpg)
+![Shopping List Image](static/images/shopping_list_image_resize.jpg)
 
 # ShoppingList|Planner
 
@@ -131,10 +131,52 @@ The database schema for the ShoppingListItem Model is used to show the relations
 
 ## Testing
 
-PEP8 online validation tool was used to validate the code to ensure there were no syntax errors or improper code indentation. It passed the test as seen in the screenshot below:
+PEP8 online validation tool was used to validate my .py files to ensure there were no syntax errors or improper code indentation. It passed the test as seen in the screenshot below:
 
+* urls.py view:
 ![PEP8 Testing](documentation/************.png)
 
+* models.py view:
+![PEP8 Testing](documentation/************.png)
+
+* views.py view:
+![PEP8 Testing](documentation/************.png)
+
+w3html validator was used to validate all my html templates and I got warning on 6 pages while the 7th page showed a warning & 3 errors. The html validator showed errors regarding the sign up page in which I used the Django built in form i.e {{ form.as_p }}. Here below are the screenshots of the 6 error free templates and the last one with errors:
+
+* Add item Page:
+
+![add item page](documentation/validation/html_validator_add_item_page.png)
+
+* Home/View list Page:
+
+![home/view page](documentation/validation/html_validator_home-view_page.png)
+
+* Edit item Page:
+
+![edit item page](documentation/validation/html_validator_edit_item_page.png)
+
+* Delete item Page:
+
+![delete item page](documentation/validation/html_validator_delete_item_page.png)
+
+* Login Page:
+
+![login page](documentation/validation/html_validator_login_page.png)
+
+* Logout Page:
+
+![logout page](documentation/validation/html_validator_logout_page.png)
+
+* Register/Sign Up Page:
+
+    * There were some errors found in the register page that has to do with the Django built in form template used. Since we were told not to reinvent the wheel but just customise Django's built in pages that already exists and are tested, I did so by using the {{ form.as_p }} but the html validator is complaining about it and this is beyond my control to fix so that's the reason why I'm leaving the errors in as seen in the screenshots below:
+
+![register/signup page](documentation/validation/html_validator_error_screenshot_for_register_page.png)
+
+![register.html code screenshot from gitpod workspace](documentation/validation/form_section_gitpod_workspace_for_register_page.png)
+
+![register page code screenshot from heroku page source](documentation/validation/form_section_view_page_source_for_register_page.png)
 
 ### Manual Testing of shoppinglist|planner app Functionalities 
 
@@ -431,11 +473,11 @@ View the GitHub Repository [here](https://github.com/Eb0nY-April14/DjangoShoppin
 * Credits
 
         Online Resources Used:
-    * Bootstrap Creative website at https://bootstrapcreative.com/can-adjust-text-size-bootstrap-responsive-design/
+    * Tutorial on Bootstrap Creative website at ![click here](https://bootstrapcreative.com/can-adjust-text-size-bootstrap-responsive-design/)
 
-    * YouTube video on Bootstrap 4 Grid System at https://www.youtube.com/watch?v=tX_4HTQ6Pgc&t=6s
+    * YouTube video on Bootstrap 4 Grid System at ![click here](https://www.youtube.com/watch?v=tX_4HTQ6Pgc&t=6s)
 
-    * Tutorial on How to change image size in CSS? at https://www.javatpoint.com/oprweb/test.jsp?filename=how-to-change-image-size-in-css1
+    * Tutorial on How to change image size in CSS? at ![click here](https://www.javatpoint.com/oprweb/test.jsp?filename=how-to-change-image-size-in-css1)
 
 
 * Acknowledgements
@@ -443,6 +485,10 @@ View the GitHub Repository [here](https://github.com/Eb0nY-April14/DjangoShoppin
     * My mentor Tim Nelson for his immense help, continuous guidance and feedback.
 
     * Cohort Facilitator Kasia for her continuous help and support.
+
+    * The Community of Full Stack Frameworks Channel on Slack for their immense help
+
+    * Tutor Support of Code Institute  
 
     * Stack Overflow website for helpful resources especially on issues encountered with cloudinary and other django errors.
 
