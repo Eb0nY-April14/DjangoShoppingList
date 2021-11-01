@@ -246,11 +246,11 @@ This tool was used to validate all my html templates and I got warning on 6 page
 
     *  I'm aware that there were some errors found by the w3html validator in the Register template, this is NOT my form code but has to do with the Django built in form template used. Since I used the Django built-in {{ form.as_p }} and my code input in this page is very minimal, the error isn't from any written code of mine. My findings however showed that the built-in Django forms template has the following issues:
     
-    * Screenshot #1 below was obtained by opening the DevTools on the Register page. It shows that there's an opening <p> tag element that is used for the Password Field which has a corresponding closing </p> tag element and same with the <span> tag and all other element tags within the django form. They all have their matching tags in place as seen in the screenshot below:
+    * Screenshot #1 below was obtained by opening the DevTools on the Register page. It shows that there's an opening 'paragraph' (i.e p) tag element that is used for the Password Field which has a corresponding closing 'paragraph' tag element and same with the 'span' tag and all other element tags within the django form. They all have their matching tags in place as seen in the screenshot below:
 
     ![register.html code screenshot from gitpod workspace](documentation/validation/w3html_validation/register_page_dev_tool_code_inspect_screenshot.png)
 
-    * Screenshot #2 below is the HTML validator result that shows it's expecting a closing </p> tag, but instead saw the opening <ul> element. Since <ul> elements cannot be direct children of <p> tags... they're both block-elements, so they cannot be nested inside of each other. This is the reason why the validator thinks a closing </p> tag should be seen BEFORE the <ul> is started and therefore flags these chain of errors.
+    * Screenshot #2 below is the HTML validator result that shows it's expecting a closing 'paragraph' (i.e p) tag, but instead saw the opening 'unordered list' (i.e ul) element. Since 'ul' elements cannot be direct children of 'p' tags... they're both block-elements, so they cannot be nested inside of each other. This is the reason why the validator thinks a closing 'p' tag should be seen BEFORE the 'ul' is started and therefore flags these chain of errors.
     With this logic however, the Django built-in {{ form.as_p }} generator is actually incorrect, semantically. See screenshot below:
 
 ![register/signup page error screenshot](documentation/validation/w3html_validation/html_validator_error_screenshot_for_register_page.png)
