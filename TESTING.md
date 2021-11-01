@@ -236,7 +236,7 @@ e) When the User changes the value for the "quantity" only, the total price is a
 
 ### Manual Testing of JavaScript function that calculates the total price of an item. 
 
-When a user adds a new item or edits one, this function calculates the total price automatically and populates the "total_price" field with the result. The screenshots below are the add item and edit item templates and the calculated & prepopulated value of total price showing that it is calculated correctly. 
+When a user adds a new item or edits one, this function calculates the total price automatically and populates the "total_price" field with the result. The screenshots below are the add item and edit item templates, the calculated & prepopulated value of total price showing that it is calculated correctly and the JSHint Validator result. 
 
 i. add item Page:
 ![Screenshot of Calculate TotalPrice on add_item Page](documentation/views/add_item_calc_total_price_screenshot.png)
@@ -246,3 +246,6 @@ ii. edit item Page before the edit operation:
 
 iii. edit item Page after the edit operation:
 ![Screenshot of Calculate TotalPrice on edit_item Page](documentation/views/after_edit_item_calc_total_price_screenshot.png)
+
+iv. JavaScript Function that calculates Total Price:
+![Screenshot of JSHint Validator Result](documentation/validation/jshint_validation/jshint_javascript_validation.png)
