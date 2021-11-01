@@ -36,29 +36,23 @@
                 {% endif %} 
                 </tr>
                 <tr> 
-                    <!-- <div> -->
-                        <td>
-                            <a href="/edit/{{ shoppinglistitem.id }}" class="spacing">
-                                <button class="size-sm btn btn-primary btn-md">Edit item</button>
-                            </a>    
-                        </td>
-                    <!-- </div> -->
-            
-                    <!-- <div>   -->
-                        <td>
-                            <a href="{% url 'shoppinglistitem-delete' shoppinglistitem.id  %}" class="spacing">
-                                <button class="size-sm btn btn-danger btn-md">Delete item</button>
-                            </a>    
-                        </td>
-                    <!-- </div> -->
-            
-                    <!-- <div> -->
-                        <td>
-                            <a href="/bought/{{ shoppinglistitem.id }}" class="spacing">
-                                <button class="size-sm btn btn-primary btn-md">Bought item</button>
-                            </a>    
-                        </td> 
-                    <!-- </div> -->
+                    <td>
+                        <a href="/edit/{{ shoppinglistitem.id }}" class="spacing">
+                            <button class="size-sm btn btn-primary btn-md">Edit item</button>
+                        </a>    
+                    </td>
+                
+                    <td>
+                        <a href="{% url 'shoppinglistitem-delete' shoppinglistitem.id  %}" class="spacing">
+                            <button class="size-sm btn btn-danger btn-md">Delete item</button>
+                        </a>    
+                    </td>
+                
+                    <td>
+                        <a href="/bought/{{ shoppinglistitem.id }}" class="spacing">
+                            <button class="size-sm btn btn-primary btn-md">Bought item</button>
+                        </a>    
+                    </td> 
                 </tr>
                 {% empty %}
                     <tr><td>Sorry!!! You currently have no items in your shopping list.</td></tr>
