@@ -2,10 +2,10 @@
 
 # ShoppingList|Planner
 
-This is a shopping list app project that was created using Python based Django framework. It is a very basic app that allows a user to perform full CRUD functionality. The programming languages used for the development of this app are a combination of HTML, CSS & JavaScript for the front-end and Python based Django framework for the back-end development. It provides the following templates to the user:
-i. 
+This is a shopping list app project that was created using Python based Django framework. It is a very basic app that allows a user to perform full CRUD functionality of Create, Read, Update and Delete his data. The programming languages used for the development of this app are a combination of HTML, CSS & JavaScript for the front-end and Python based Django framework for the back-end development. 
 
 The purpose of this app is to take off the hassle of manually writing down shopping list either for the home or office when going shopping. It rather automates this monotonous everyday task and gives the user the opportunity to reuse a single list over and over again by updating it as at when needed which gives it the added advantage over the manual pen & paper list thereby making shopping pleasurable and enjoyable. 
+
 The user interacts with the app through the GUI interface i.e front-end templates designed for each functionality such as add, edit, view or delete an item/a list and are also protected through authentication so that no unauthorised person will have access to the contents in the list. 
 
 ![ShoppingList|Planner app on Desktop, Laptop, Tablet & Smatphone](documentation/amiresponsive_shoppinglist_planner.png)
@@ -33,27 +33,70 @@ User Experience (UX)
 
 * User stories
 
-* User Goals
+First Time User Goals
 
-        a) As an Existing User who is logged in, I want to be able to view my shopping list and see what items I have purchased and the ones left.
+    a) As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the app
 
-        b) As an Existing User who is logged in, I want to be able to add a new item to my shopping list and view them during shopping.
+    b) As a First Time Visitor, I want to be able to sign up for an account in order to enjoy all the features of the app. 
 
-        c) As an Existing User, I want to be able to login to my account and add, view, modify or delete an item in my shopping list or delete my entire list.
+    c) As a First Time Visitor, I want to be able to access information through their social media links to see their followings on social media to determine how trusted and known the app is.
 
-        d) As an Existing User who is logged in, I want to be able to mark an item in my list as either bought or unbought. toggle an item so that I can mark it as done when it's purchased. 
+Registered User Goals
 
-        e) As a First time User, I want to be able to sign up for an account in order to enjoy all the features of the app. 
+    a) As a Registered User who is logged in, I want to be able to view my shopping list and see what items I have purchased and the ones left.
+
+    b) As a Registered User who is logged in, I want to be able to add a new item to my shopping list and view them during shopping.
+
+    c) As a Registered User, I want to be able to login to my account and add, view, modify or delete an item in my shopping list or delete my entire list.
+
+    d) As a Registered User who is logged in, I want to be able to mark an item in my list as either bought or unbought. toggle an item so that I can mark it as done when it's purchased. 
         
-        f) As an Existing User, I want to be able to logout of my account to keep my information private and secure. 
+    e) As a Registered User who is logged in, I want to be able to logout of my account to keep my information private and secure. 
         
-        g) As an Existing User, I want to be able to retrieve and make changes on any item on my shopping list.  
+    f) As a Registered User who is logged in, I want to be able to retrieve and make changes on any item on my shopping list.  
 
-        h) As an Existing User, I want to be able to remove a purchased item from the list to avoid the mistake of repurchasing it.
+    g) As a Registered User who is logged in, I want to be able to remove a purchased item from the list to avoid the mistake of repurchasing it.
 
-        i) As an Existing User, I want to be able to delete my list and have a blank space to start a new list.
+    h) As a Registered User who is logged in, I want to be able to delete my list and have a blank space to start a new list.
         
-        j) As an Existing User, I want to be able to enter my item's quantity and unit price and get the total price calculated and displayed automatically.
+    i) As a Registered User who is logged in, I want to be able to enter my item's quantity and unit price and get the total price calculated and displayed automatically.
+
+---
+
+# Design
+
+* Colour Scheme
+
+    The two main colours used are Black and White to get a good contrast, enhance usability and make users enjoy a great User experience. The background colour used for the navigation bar and footer sections are black with font colour of white for the texts while for the content area, the background colour used is white with font colour of black.
+
+* Typography
+
+    The Lato font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Lato is a clean font known for its round edges and the approachable warmth it gives to the reader and is used frequently in programming. It’s now one of the most popular fonts on Google font and widely used pretty much everywhere so it is both attractive and appropriate for my app.
+  
+* Imagery
+Imagery is important. There is no background image used in this app in order to keep things simple and nice but an eye-catching shoppig list image is used as a logo to catch the user's attention, add beauty to the app pages & subtly inform/remind the user that this is a shopping list planner app as they navigate around the app.
+
+---
+
+# Wireframes
+
+For prototyping, the wireframes were designed manually by hand without using any automated tool in order to bring this idea to life. See screenshots below:
+
+Welcome Page when User is not logged in or registered:
+![Welcome Page](documentation/wireframes/general_view_wireframe.jpeg)
+
+Create New Item Page when User is logged in: 
+![Add Item Page](documentation/wireframes/add_item_wireframe.jpeg)
+
+Read Item Page when User is logged in: 
+![Home/View Page](documentation/wireframes/read_view_item_wireframe.jpeg)
+
+Update Item Page when User is logged in: 
+![Edit Item Page](documentation/wireframes/update_item_wireframe.jpeg)
+
+Delete Item/List Page when User is logged in: 
+![Delete Item/List Page](documentation/wireframes/delete_item_list_wireframe.jpeg)
+
 
 Agile Approach Used
 
@@ -66,14 +109,6 @@ The database schema for the ShoppingListItem Model is used to show the relations
 * View the database Schema below: 
 
 ![Database Schema](documentation/database_schema.png)
-
-# Technologies Used
-
-* Languages & Framework Used
-
-  * HTML, CSS, JavaScript and Bootstrap for front-end development
-
-  * Python and Django framework for backend development
 
 ---
 
@@ -106,6 +141,16 @@ The database schema for the ShoppingListItem Model is used to show the relations
 
     ---
 
+    # Technologies Used
+
+* Languages & Framework Used
+
+  * HTML, CSS, JavaScript and Bootstrap for front-end development
+
+  * Python and Django framework for backend development
+
+---
+
     Frameworks, Libraries and Programs Used
 
 1. Git
@@ -116,9 +161,9 @@ The database schema for the ShoppingListItem Model is used to show the relations
 
     * GitHub was used to store the project's code after being pushed from Git.
 
-3. Bootstrap
+3. Bootstrap 4.1.3
 
-  * Bootstrap 4 was used for styling
+  * Bootstrap was used to assist with the responsiveness and styling of the website.
 
 4. Django
 
@@ -127,6 +172,22 @@ The database schema for the ShoppingListItem Model is used to show the relations
 5. Whitenoise
 
   * Since Heroku can't serve static files on its own, this external package was installed and used to serve all the static files on Heroku as it works well with it. WhiteNoise allows the web app to serve its own static files, making it a self-contained unit that can be deployed anywhere without relying on nginx, Amazon S3 or any other external service.
+
+6. Lato & Roboto Google Fonts:
+ 
+    * They were used on all pages throughout the project.
+
+7. Font Awesome:
+
+    * Font Awesome was used on all pages throughout the app to add social media icons on the footer section for UX purpose.
+
+8. jQuery:
+
+    * jQuery came with Bootstrap to make the navbar responsive.
+
+9. Windows 10 built-in Photo Editor:
+
+    * This was used to resize the logo used on all page across the app.     
 
 
 ## Testing
@@ -183,13 +244,14 @@ This tool was used to validate all my html templates and I got warning on 6 page
 
 * Register/Sign Up Page:
 
-    * There were some errors found in the register page that has to do with the Django built in form template used. Since we were told not to reinvent the wheel but just customise Django's built in pages that already exists and are tested, I did so by using the {{ form.as_p }} but the html validator is complaining about it and this is beyond my control to fix so that's the reason why I'm leaving the errors in as seen in the screenshots below:
+    * There were some errors found in the register page that has to do with the Django built in form template used. Since we were told not to reinvent the wheel but just customise Django's built in pages that already exists and are tested, I did so by using the {{ form.as_p }} but the html validator is complaining about it. I have done all due diligence by opening the code in dev tools and thoroughly inspecting all the elements line by line to ensure that all tags are closed which they are and to get a second opinion, I went on to tutor support and the tutor that attended to me performed the same procedure and reported back to me that all tags are closed so there is no need for the validator to flag these errors. Since my code input in this page is very minimal as I used django built-in form, I can't seem to fix these errors as they are beyond my control so the tutor advised me to leave them in and explain in my README file the reason why this is happening so that's the reason why I'm leaving the errors in as seen in the screenshots below:
 
-![register/signup page](documentation/validation/w3html_validation/html_validator_error_screenshot_for_register_page.png)
+![register/signup page error screenshot](documentation/validation/w3html_validation/html_validator_error_screenshot_for_register_page.png)
 
 ![register.html code screenshot from gitpod workspace](documentation/validation/w3html_validation/form_section_gitpod_workspace_for_register_page.png)
 
-![register page code screenshot from heroku page source](documentation/validation/w3html_validation/form_section_view_page_source_for_register_page.png)
+![register page code screenshot from page source](documentation/validation/w3html_validation/register_page_djangoform_code_screenshot1.png)
+![register page code screenshot from page source](documentation/validation/w3html_validation/register_page_djangoform_code_screenshot2.png)
 
 w3CSS validator
 
@@ -204,9 +266,45 @@ This tool was used to validate my custom css code and it passed successfully. Se
 
 * Testing User Stories from User Experience (UX) Section
 
-i. As an Existing User who is logged in, I want to be able to view my shopping list and see what items I have purchased and the ones left. 
+First Time User Goals
 
-    a. User logs in and if successful, he is redirected to the home page where he can view his shopping list as seen in the screenshots below:
+i. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the app
+
+    a) When a visitor clicks on the app's url and since he's not registered, he lands on the welcome page where extensive details about the app is given so he can read through to get an understanding of the main purpose of the site and learn more about the app. See screenshot below:
+
+![Visitors Welcome Page](documentation/views/welcome_page_visitors.png)
+
+---
+
+ii. As a First Time Visitor, I want to be able to sign up for an account in order to enjoy all the features of the app. 
+
+    a) When a user clicks on the app link or copies it into any search box such as Google engine, he lands on the welcome page. At the top right side of this page are the nav links, one of which is the "Register" link as seen in the screenshot below:
+
+![Welcome Page Screenshot](documentation/views/welcome_page_screenshot1.png)
+![welcomePage Screenshot](documentation/views/welcome_page_screenshot2.png)
+    
+    b) If he clicks on the "Register" link, he is taken to the "Sign Up" form page where he can fill in his details as seen in the screenshot below: 
+
+![SignUp Page Screenshot](documentation/views/signup_page_screenshot1.png)
+![SignUp Page Screenshot](documentation/views/signup_page_screenshot2.png) 
+
+---
+
+iii. As a First Time Visitor, I want to be able to access information through their social media links to see their followings on social media to determine how trusted and known the app is.
+
+    a) The social media icons are located in the footer section (i.e bottom) of the welcome Page for both unregistered and not logged in Users to have access. See screenshot below:
+
+    Footer Section:
+
+![Social Media Links](documentation/views/footer_social_media_links.png)
+
+---
+
+Registered User Goals
+
+i. As a Registered User who is logged in, I want to be able to view my shopping list and see what items I have purchased and the ones left. 
+
+    a) User logs in and if successful, he is redirected to the home page where he can view his shopping list as seen in the screenshots below:
 
 ![homePage/viewShoppingList Screenshot](documentation/views/view_shoppinglist_screenshot1.png)
 ![homePage/viewShoppingList Screenshot](documentation/views/view_shoppinglist_screenshot2.png)
@@ -214,27 +312,27 @@ i. As an Existing User who is logged in, I want to be able to view my shopping l
 
 ---
 
-ii. As an Existing User who is logged in, I want to be able to add a new item to my shopping list and view them during shopping.
+ii. As a Registered User who is logged in, I want to be able to add a new item to my shopping list and view them during shopping.
 
-    a. The User will find the "Add an item" button close to the footer section of the home page. See screenshot below: 
+    a) The User will find the "Add an item" button close to the footer section of the home page. See screenshot below: 
 
 ![AddItemButton Screenshot](documentation/views/add_item_button_screenshot.png)
     
-    b. On clicking the "Add an item" button, he is taken to the add item's form page and if he fills the form and submits it, the new item is added to the shopping list in the database and he is taken back to the home page where he'll see his newly added item. See the screenshots below:  
+    b) On clicking the "Add an item" button, he is taken to the add item's form page and if he fills the form and submits it, the new item is added to the shopping list in the database and he is taken back to the home page where he'll see his newly added item. See the screenshots below:  
 
 ![AddItemPage Screenshot](documentation/views/add_item_page_screenshot1.png)
 ![AddItemPage Screenshot](documentation/views/add_item_page_screenshot2.png)
 
 ---
 
-iii. As an Existing User, I want to be able to login to my account and add, view, modify or delete an item in my shopping list or delete my entire list.
+iii. As a Registered User who is logged in, I want to be able to login to my account and add, view, modify or delete an item in my shopping list or delete my entire list.
 
-    a. When a user clicks on the app link or copies it into any search box such as Google, he lands on the welcome page. At the top right side of this page are the nav links, one of which is the "Login" link as seen in the screenshot below:
+    a) When a user clicks on the app link or copies it into any search box such as Google, he lands on the welcome page. At the top right side of this page are the nav links, one of which is the "Login" link as seen in the screenshot below:
 
 ![WelcomePage Screenshot](documentation/views/welcome_page_screenshot1.png)
 ![welcomePage Screenshot](documentation/views/welcome_page_screenshot2.png)
     
-    b. When he clicks on the "Login" link, he is taken to the login form page where he can fill in his details and if correct, he logs in successfully. See screenshot below: 
+    b) When he clicks on the "Login" link, he is taken to the login form page where he can fill in his details and if correct, he logs in successfully. See screenshot below: 
 
 ![LoginPage Screenshot](documentation/views/login_page_screenshot1.png)
 ![LoginPage Screenshot](documentation/views/login_page_screenshot2.png)
@@ -242,9 +340,9 @@ iii. As an Existing User, I want to be able to login to my account and add, view
 
 ---
 
-iv. As an Existing User who is logged in, I want to be able to mark an item in my list as either bought or unbought. 
+iv. As a Registered User who is logged in, I want to be able to mark an item in my list as either bought or unbought. 
 
-    a. The third button beside each item on the home/viewing page is the one for toggling an item to mark it as either done when it's purchased or not. When the button is clicked, it strikes out the item as "bought" and is moved to the bottom of the row and if clicked again, the "strike out" mark is removed & the item is moved back up which means it hasn't been bought yet. See screenshot below:
+    a) The third button beside each item on the home/viewing page is the one for toggling an item to mark it as either done when it's purchased or not. When the button is clicked, it strikes out the item as "bought" and is moved to the bottom of the row and if clicked again, the "strike out" mark is removed & the item is moved back up which means it hasn't been bought yet. See screenshot below:
 
 Items marked as unbought: 
 ![UnstrikeNotBoughtItem Screenshot](documentation/views/not_bought_item_screenshot.png)
@@ -254,84 +352,70 @@ Items marked as bought:
 
 ---
 
-v. As a First time User, I want to be able to sign up for an account in order to enjoy all the features of the app. 
+v. As a Registered User who is logged in, I want to be able to logout of my account to keep my information private and secure.
 
-    a. When a user clicks on the app link or copies it into any search box such as Google, he lands on the welcome page. At the top right side of this page are the nav links, one of which is the "Register" link as seen in the screenshot below:
-
-![WelcomePage Screenshot](documentation/views/welcome_page_screenshot1.png)
-![welcomePage Screenshot](documentation/views/welcome_page_screenshot2.png)
-    
-    b. If he clicks on the "Register" link, he is taken to the "Sign Up" form page where he can fill in his details as seen in the screenshot below: 
-
-![SignUpPage Screenshot](documentation/views/signup_page_screenshot1.png)
-![SignUpPage Screenshot](documentation/views/signup_page_screenshot2.png) 
-
----
-
-vi. As an Existing User, I want to be able to logout of my account to keep my information private and secure.
-
-    a. The "Logout" link is displayed to the user on the nav bar at the top right side of the home page once he is authenticated. See screenshot below:
+    a) The "Logout" link is displayed to the user on the nav bar at the top right side of the home page once he is authenticated. See screenshot below:
 
 ![LogoutPage Screenshot](documentation/views/logout_link_screenshot.png)
 
-    b. When he clicks on the "Logout" link, he is logged out of his account and a message is displayed to confirm his successful logout operation as seen in the screenshot below:
+    b) When he clicks on the "Logout" link, he is logged out of his account and a message is displayed to confirm his successful logout operation as seen in the screenshot below:
 
 ![LogoutPage Screenshot](documentation/views/logout_message_screenshot.png) 
 
 ---
 
-vii. As an Existing User, I want to be able to retrieve and make changes on any item on my shopping list.
+vi. As a Registered User who is logged in, I want to be able to retrieve and make changes on any item on my shopping list.
 
-    a. The first button beside each item on the home/viewing page is the "Edit item" button which the User needs for updating an item in the database as shown in the screenshot below: 
+    a) The first button beside each item on the home/viewing page is the "Edit item" button which the User needs for updating an item in the database as shown in the screenshot below: 
 
 ![EditItemButton Screenshot](documentation/views/edit_item_button_screenshot.png)
     
-    b. On clicking the "Edit item" button, the User is taken to the edit item's form page where the input fields are prepopulated with their current values in the database and waiting for the user to make changes to the relevant field(s). After making his desired changes, he clicks on the "Update item" button and the changes are made in the database and user is redirected back to the home page to view his shopping list in order to confirm that the changes has actually been made. See screenshot below:
+    b) On clicking the "Edit item" button, the User is taken to the edit item's form page where the input fields are prepopulated with their current values in the database and waiting for the user to make changes to the relevant field(s). After making his desired changes, he clicks on the "Update item" button and the changes are made in the database and user is redirected back to the home page to view his shopping list in order to confirm that the changes has actually been made. See screenshot below:
 
 ![EditItemPage Screenshot](documentation/views/edit_item_page_screenshot1.png)
 ![EditItemPage Screenshot](documentation/views/edit_item_page_screenshot2.png)
 
 ---
 
-viii. As an Existing User, I want to be able to remove a purchased item from the list to avoid the mistake of repurchasing it.
+vii. As a Registered User who is logged in, I want to be able to remove a purchased item from the list to avoid the mistake of repurchasing it.
 
-    a. The second button beside each item on the home/viewing page is the "Delete item" button which the User needs for removing/deleting an item in the database as shown in the screenshot below: 
+    a) The second button beside each item on the home/viewing page is the "Delete item" button which the User needs for removing/deleting an item in the database as shown in the screenshot below: 
 
 ![DeleteItemButton Screenshot](documentation/views/delete_item_button_screenshot.png)
       
-    b. When he clicks on the "Delete item" button, another page that contains a confirmation message is displayed to the user and if he confirms with the "Delete item" button again, the item is removed from the database. See screenshot below:
+    b) When he clicks on the "Delete item" button, another page that contains a confirmation message is displayed to the user and if he confirms with the "Delete item" button again, the item is removed from the database. See screenshot below:
 
 ![DeleteItemMessage Screenshot](documentation/views/delete_item_message_confirm_screenshot.png)
 
 ---
 
-ix. As an Existing User, I want to be able to delete my list and have a blank space to start a new list.
+viii. As a Registered User who is logged in, I want to be able to delete my list and have a blank space to start a new list.
 
-    a. The User will find the "Delete List" button beside the "Add an item" button close to the footer section of the home page and if clicked, the entire shopping list is deleted outrightly and a blank page is displayed back to the user to show that his list has been deleted. See screenshot below: 
+    a) The User will find the "Delete List" button beside the "Add an item" button close to the footer section of the home page and if clicked, the entire shopping list is deleted outrightly and a blank page is displayed back to the user to show that his list has been deleted. See screenshot below: 
 
 ![DeleteListButton Screenshot](documentation/views/delete_list_button_screenshot.png)
 
 ---
 
-x. As an Existing User, I want to be able to enter my item's quantity and unit price and get the total price calculated and displayed automatically.
+ix. As a Registered User who is logged in, I want to be able to enter my item's quantity and unit price and get the total price calculated and displayed automatically.
 
-    a. When the "Add an item" form page is displayed to the User, he enters the item name, unit price and quantity in the appropriate fields and when he moves the cursor into the input box for the total price field, it automatically gets populated with the total price for that particular item as seen in the screenshot below:
+    a) When the "Add an item" form page is displayed to the User, he enters the item name, unit price and quantity in the appropriate fields and when he moves the cursor into the input box for the total price field, it automatically gets populated with the total price for that particular item as seen in the screenshot below:
 
 ![AutoCalculateTotalPrice Screenshot](documentation/views/auto_calc_total_price_add_item_page_screenshot.png) 
 
-    b. Similar process as "Add an item" also goes for the "Edit an item" operation. Find below the screenshot taken before the item was updated:
+    b) Similar process as "Add an item" also goes for the "Edit an item" operation. Find below the screenshot taken before the item was updated:
 
 ![BeforeEditItemOperation Screenshot](documentation/views/before_edit_item_operation_page_screenshot.png) 
     
-    c. When the User changes the values for both the "unit price" and "quantity", the total price is automatically calculated and its field populated with the right amount as seen in the screenshot below: 
+    c) When the User changes the values for both the "unit price" and "quantity", the total price is automatically calculated and its field populated with the right amount as seen in the screenshot below: 
 
 ![AutoCalculateTotalPrice Screenshot](documentation/views/auto_calc_price_qty_change_edit_item_screenshot.png) 
 
-    d.  When the User changes the value for the "unit price" only, the total price is automatically calculated and its field populated with the right amount as seen in the screenshot below: 
+    d)  When the User changes the value for the "unit price" only, the total price is automatically calculated and its field populated with the right amount as seen in the screenshot below: 
 
 ![AutoCalculateTotalPrice Screenshot](documentation/views/auto_calc_price_change_edit_item_screenshot.png) 
 
-    e. When the User changes the value for the "quantity" only, the total price is automatically calculated and its field populated with the right amount as seen in the screenshot below: 
+    e) When the User changes the value for the "quantity" only, the total price is automatically calculated and its field populated with the right amount as seen in the screenshot below: 
 
 ![AutoCalculateTotalPrice Screenshot](documentation/views/auto_calc_qty_change_edit_item_screenshot.png) 
 
