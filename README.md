@@ -2,7 +2,7 @@
 
 # ShoppingList|Planner
 
-This is a shopping list app project that was created using Python based Django framework. It is a very basic app that allows a user to perform full CRUD functionality of Create, Read, Update and Delete his data. The programming languages used for the development of this app are a combination of HTML, CSS & JavaScript for the front-end and Python based Django framework for the back-end development. 
+This is a shopping list app project that was created using Python based Django framework. It is a very basic app that allows a user to perform full CRUD functionality i.e Create, Read, Update and Delete his data. The programming languages used for the development of this app are a combination of HTML, CSS & JavaScript for the front-end and Python based Django framework for the back-end development. 
 
 The purpose of this app is to take off the hassle of manually writing down shopping list either for the home or office when going shopping. It rather automates this monotonous everyday task and gives the user the opportunity to reuse a single list over and over again by updating it as at when needed which gives it the added advantage over the manual pen & paper list thereby making shopping pleasurable and enjoyable. 
 
@@ -97,10 +97,13 @@ Update Item Page when User is logged in:
 Delete Item/List Page when User is logged in: 
 ![Delete Item/List Page](documentation/wireframes/delete_item_list_wireframe.jpeg)
 
+---
 
 Agile Approach Used
 
 * I used a [kanban board on GitHub](https://github.com/Eb0nY-April14/DjangoShoppingList/projects/1) as the agile planning tool for my Django app. A project was created in GitHub with issues and milestones set. I also used the MoSCoW labelling technique to prioritise my user stories into Must-Have, Should-Have, Could-Have and Won't-Have. At the start, I put all my user stories in the "To do" section of the board, then I moved the 3 Must-Haves into the "In progress" section and once I finished working on a functionality and everything responds as I want, I then move it to the "Done" section.
+
+---
 
 # Database Schema
 
@@ -143,7 +146,7 @@ In a bid to find a solution to this issue, I searched online and found a very go
 
 # Technologies Used
 
-* Languages & Framework Used
+* Languages Used
 
 * HTML, CSS and JavaScript for front-end development
 
@@ -189,6 +192,7 @@ Frameworks, Libraries and Programs Used
 
 * This was used to resize the logo used on all page across the app.     
 
+---
 
 ## Testing
 
@@ -314,7 +318,9 @@ View the GitHub Repository [here](https://github.com/Eb0nY-April14/DjangoShoppin
 
 * No Image was used except the logo image which was obtained through Google search from this website https://depositphotos.com/vector-images/shopping-list.html  
 
-* Acknowledgements
+---
+
+# Acknowledgements
 
 * My mentor Tim Nelson for his immense help, continuous guidance and feedback.
 
