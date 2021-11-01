@@ -145,9 +145,9 @@ The database schema for the ShoppingListItem Model is used to show the relations
 
 * Languages & Framework Used
 
-  * HTML, CSS, JavaScript and Bootstrap for front-end development
+  * HTML, CSS and JavaScript for front-end development
 
-  * Python and Django framework for backend development
+  * Python for backend development
 
 ---
 
@@ -165,7 +165,7 @@ The database schema for the ShoppingListItem Model is used to show the relations
 
   * Bootstrap was used to assist with the responsiveness and styling of the website.
 
-4. Django
+4. Django & Jinja templating Language
 
   * The entire project anchors on this framework as it was used to build this app
 
