@@ -74,7 +74,7 @@ Registered User Goals
     The Lato font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Lato is a clean font known for its round edges and the approachable warmth it gives to the reader and is used frequently in programming. It’s now one of the most popular fonts on Google font and widely used pretty much everywhere so it is both attractive and appropriate for my app.
   
 * Imagery
-Imagery is important. There is no background image used in this app in order to keep things simple and nice but an eye-catching shoppig list image is used as a logo to catch the user's attention, add beauty to the app pages & subtly inform/remind the user that this is a shopping list planner app as they navigate around the app.
+Imagery is important. There is no background image used in this app in order to keep things simple and nice but an eye-catching shopping list image is used as a logo to catch the user's attention, add beauty to the app pages & subtly inform/remind the user that this is a shopping list planner app as they navigate around the app.
 
 ---
 
