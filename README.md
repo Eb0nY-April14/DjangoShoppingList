@@ -576,15 +576,26 @@ View the GitHub Repository [here](https://github.com/Eb0nY-April14/DjangoShoppin
 
 ---
 
-* Credits
+# Credits
 
-        Online Resources Used:
+## Code
+
+* Bootstrap4: Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
+
+* Online Resources Used:
     * Tutorial on Bootstrap Creative website at https://bootstrapcreative.com/can-adjust-text-size-bootstrap-responsive-design/
 
     * YouTube video on Bootstrap 4 Grid System at https://www.youtube.com/watch?v=tX_4HTQ6Pgc&t=6s
 
     * Tutorial on How to change image size in CSS? at https://www.javatpoint.com/oprweb/test.jsp?filename=how-to-change-image-size-in-css1
 
+## Content
+
+* Most contents were written by me with the exception of some pages which were taken from the course walkthroughs and Django built-in templates.
+
+## Media
+
+* No Image was used except the logo image which was obtained through Google search from this website https://depositphotos.com/vector-images/shopping-list.html  
 
 * Acknowledgements
 
@@ -594,7 +605,7 @@ View the GitHub Repository [here](https://github.com/Eb0nY-April14/DjangoShoppin
 
     * The Community of Full Stack Frameworks Channel on Slack for their immense help
 
-    * Tutor Support of Code Institute  
+    * Tutor Support at Code Institute for their support.
 
     * Stack Overflow website for helpful resources especially on issues encountered with cloudinary and other django errors.
 
