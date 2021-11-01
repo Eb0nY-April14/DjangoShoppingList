@@ -244,14 +244,17 @@ This tool was used to validate all my html templates and I got warning on 6 page
 
 * Register/Sign Up Page:
 
-    * There were some errors found in the register page that has to do with the Django built in form template used. Since we were told not to reinvent the wheel but just customise Django's built in pages that already exists and are tested, I did so by using the {{ form.as_p }} but the html validator is complaining about it. I have done all due diligence by opening the code in dev tools and thoroughly inspecting all the elements line by line to ensure that all tags are closed which they are and to get a second opinion, I went on to tutor support and the tutor that attended to me performed the same procedure and reported back to me that all tags are closed so there is no need for the validator to flag these errors. Since my code input in this page is very minimal as I used django built-in form, I can't seem to fix these errors as they are beyond my control so the tutor advised me to leave them in and explain in my README file the reason why this is happening so that's the reason why I'm leaving the errors in as seen in the screenshots below:
+    *  I'm aware that there were some errors found by the w3html validator in the Register template, this is NOT my form code but has to do with the Django built in form template used. Since I used the Django built-in {{ form.as_p }} and my code input in this page is very minimal, the error isn't from any written code of mine. My findings however showed that the built-in Django forms template has the following issues:
+    
+    * Screenshot #1 below was obtained by opening the DevTools on the Register page. It shows that there's an opening <p> tag element that is used for the Password Field which has a corresponding closing </p> tag element and same with the <span> tag and all other element tags within the django form. They all have their matching tags in place as seen in the screenshot below:
+
+    ![register.html code screenshot from gitpod workspace](documentation/validation/w3html_validation/register_page_dev_tool_code_inspect_screenshot.png)
+
+    * Screenshot #2 below is the HTML validator result that shows it's expecting a closing </p> tag, but instead saw the opening <ul> element. Since <ul> elements cannot be direct children of <p> tags... they're both block-elements, so they cannot be nested inside of each other. This is the reason why the validator thinks a closing </p> tag should be seen BEFORE the <ul> is started and therefore flags these chain of errors.
+    With this logic however, the Django built-in {{ form.as_p }} generator is actually incorrect, semantically. See screenshot below:
 
 ![register/signup page error screenshot](documentation/validation/w3html_validation/html_validator_error_screenshot_for_register_page.png)
 
-![register.html code screenshot from gitpod workspace](documentation/validation/w3html_validation/form_section_gitpod_workspace_for_register_page.png)
-
-![register page code screenshot from page source](documentation/validation/w3html_validation/register_page_djangoform_code_screenshot1.png)
-![register page code screenshot from page source](documentation/validation/w3html_validation/register_page_djangoform_code_screenshot2.png)
 
 w3CSS validator
 
