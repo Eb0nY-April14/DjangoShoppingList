@@ -1,0 +1,149 @@
+.relative {
+    border-radius: 6px;
+    width: 5%;
+  }
+
+  img {
+    float: left;
+  }
+
+  img.relative {  
+    max-width: 100%;  
+    height: auto;
+  }  
+
+  li.greeting {
+    color: #fff;
+  }
+
+  .navbar {
+    background: #6ab446;
+  }
+
+  .nav-link,
+  .navbar-brand {
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .nav-link {
+    margin-right: 1em !important
+  }
+
+  .nav-link:hover {
+    color: #000;
+  }
+
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+  }
+
+  table {
+    table-layout: fixed;
+    overflow: hidden;
+}
+
+  /* .button-space {
+    position: relative; 
+    margin: 50px;  
+    text-align: center;   
+  } */
+
+  .form-center {
+    margin-left: 50px;
+  }
+
+  .heading {
+    margin: 100px 0 80px 0;
+  }
+
+  .bttn-spacing {
+    margin: 30px 0 40px 0;
+  }
+
+  .fab {
+    font-size: 30px;
+    text-decoration: none;
+  }
+
+  .fab:hover {
+    opacity: 0.7;
+  }
+
+  .footer-weight {
+    font-weight: bold;
+  }
+
+  .para-size {
+    font-size: 1.5em;
+  }
+
+  p.greeting {
+    color: white;
+  }
+
+  .headerspace {
+    margin-bottom: 30px;
+  }
+
+  /********************************************************/
+  /*    MEDIA QUERIES TO CHANGE THE DEFAULT FONT          */
+  /*      SIZES FOR 4 BREAKPOINTS IN BOOTSTRAP            */
+  /********************************************************/
+
+  @media (max-width: 540px) {  
+    .bttn-spacing {
+      margin: 20px 0 15px 0;
+    } 
+
+    a.spacing {
+      margin: 0 20px 0 40px;
+    }
+  }
+  
+  @media (max-width: 414px) {  
+    tr.size-sm, a > button.size-sm  {
+      font-size: 0.8rem;
+    } 
+  }
+
+  @media (max-width: 320px) {  
+    tr.size-sm {
+      font-size: 0.6rem;
+    } 
+  }
+
+
+
+  /* @media (min-width: 230px) {  
+    h2 {font-size:1.5rem;} 
+  }
+
+ Small devices (landscape phones, 544px and up) 
+@media (min-width: 544px) {  
+  p {font-size:1.5rem;} 1rem = 16px
+}
+
+ Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint 
+@media (min-width: 768px) {  
+  p {font-size:1.5rem;} 
+} */
+
+/* Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) { 
+  p {font-size:2.5rem;} /*1rem = 16px
+} */
+
+/* Extra large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) {  
+  p {font-size:3rem;} /*1rem = 16px    
+} */
+
+
+
